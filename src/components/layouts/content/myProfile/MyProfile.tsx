@@ -73,7 +73,7 @@ function MyProfile() {
                                                 variant="contained"
                                                 color={"secondary"}
                                                 sx={{marginRight: "25px",}}
-                                            > Add Friends Add Friends Add Friends
+                                            > Add Friends
                                             </Button>
                                         </NavLink> :
 
