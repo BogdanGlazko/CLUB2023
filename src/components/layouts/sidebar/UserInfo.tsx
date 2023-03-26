@@ -16,8 +16,9 @@ const UserInfo = () => {
 
     useEffect(()=>{
         if (userData?.id && (userDataForSidebar?.fullName==="")){
-            dispatch(getInfoForSidebar(userData!.id))
-
+            if (userDataForSidebar){
+                dispatch(getInfoForSidebar(userData!.id))
+            }
         }
     })
 
