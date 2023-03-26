@@ -17,7 +17,10 @@ const SocialInfoAboutUser = () => {
     const infoAboutLoggedUser = useSelector(getUserData)
 
     useEffect(() => {
-        dispatch(getUserForMyProfile(infoAboutLoggedUser!.id))
+        if (infoAboutLoggedUser){
+            dispatch(getUserForMyProfile(infoAboutLoggedUser.id))
+        }
+
     }, [])
 
     const handleChangeInfo = (arg: string) => {

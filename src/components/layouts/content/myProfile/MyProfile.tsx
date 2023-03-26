@@ -31,7 +31,9 @@ function MyProfile() {
         if (state) {
             dispatch(getUserForMyProfile(state.id))
         } else {
-            dispatch(getUserForMyProfile(infoAboutLoggedUser!.id))
+            if (infoAboutLoggedUser){
+                dispatch(getUserForMyProfile(infoAboutLoggedUser.id))
+            }
         }
     }, [state])
 
