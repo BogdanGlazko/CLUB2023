@@ -5,10 +5,13 @@ import {setStatusOfFollowing, setUserOnProfilePage, setUserStatus} from "./myPro
 export const getUserForMyProfile = (id:number)=> async (dispatch:AppDispatch)=>{
     try {
         const response = await UsersRequestAxios.getUserForMyProfile(id)
-        dispatch(setUserOnProfilePage(response))
+        console.log(response)
+        await dispatch(setUserOnProfilePage(response))
         const responseFollower = await UsersRequestAxios.isfollowerUser(id)
-        dispatch(setStatusOfFollowing(responseFollower))
+        console.log(responseFollower)
+        await dispatch(setStatusOfFollowing(responseFollower))
         const responseStatus = await UsersRequestAxios.statusOfUser(id)
+        console.log(responseStatus)
         dispatch(setUserStatus(responseStatus))
     } catch (error){
         console.log(error)
@@ -20,7 +23,7 @@ export const unFollowUser = (id: number) => async (dispatch: AppDispatch) => {
         console.log(id)
         const response = await UsersRequestAxios.unFollowUser(id)
         console.log(response)
-        dispatch(setStatusOfFollowing(false))
+        await dispatch(setStatusOfFollowing(false))
     }catch (error){
         console.log("ошибочка!" + error)
     }

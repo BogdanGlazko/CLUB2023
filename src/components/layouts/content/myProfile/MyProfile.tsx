@@ -25,7 +25,7 @@ function MyProfile() {
     const dataAboutUser = useSelector(getUserDataForProfilePage)
     const isFollowerUser = useSelector(getIsFollower)
     const infoAboutLoggedUser = useSelector(getUserData)
-
+    console.log(infoAboutLoggedUser)
 
     useEffect(() => {
         if (state) {
@@ -47,7 +47,9 @@ function MyProfile() {
     },[]);
 
 
-    if (dataAboutUser!.fullName) {
+    if (!dataAboutUser?.fullName) {
+        return <Loader/>
+    } else {
         return (
             <div id={"userMainInfoWrapper"}>
                 <div className={s.userMainInfo} id={"userMainInfo"}>
@@ -393,10 +395,9 @@ function MyProfile() {
 
             </div>
         );
-
-    } else {
-        return <Loader/>
     }
+
+
 
 }
 

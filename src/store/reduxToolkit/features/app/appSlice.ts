@@ -26,6 +26,7 @@ export const appSlice = createSlice({
             state.errorDiv = action.payload.messages[0]
         },
         setUserData:(state,action):void=>{
+
             state.userData=action.payload
         },
         changeCaptchaMessageStatus:(state,action):void=>{

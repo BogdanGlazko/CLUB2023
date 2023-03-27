@@ -41,15 +41,12 @@ export const friendsSlice = createSlice({
     initialState,
     reducers: {
         setUserOnProfilePage: (state = initialState, action:  PayloadAction<IUserData>) => {
-            console.log(action.payload)
             state.users = action.payload
         },
         setStatusOfFollowing: (state = initialState, action:  PayloadAction<boolean>) => {
-            console.log("я сетаюбббьььь"+action.payload)
             state.users!.isFollower = action.payload
         },
         setUserStatus: (state = initialState, action:  PayloadAction<string>) => {
-            console.log("я сетаюбббьььь"+action.payload)
             state.users!.status = action.payload
         }
     }

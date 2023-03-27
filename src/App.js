@@ -22,7 +22,7 @@ const App = () => {
         window.onbeforeunload = () => {
             window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname))
         }
-        dispatch(loading(true))
+
         dispatch(isLoggedUser())
     }, [])
 
