@@ -30,7 +30,6 @@ function MyProfile() {
     const dataAboutUser = useSelector(getUserDataForProfilePage)
     const isFollowerUser = useSelector(getIsFollower)
     const infoAboutLoggedUser = useSelector(getUserData)
-    console.log(infoAboutLoggedUser)
 
     useEffect(() => {
         if (state) {
@@ -52,7 +51,7 @@ function MyProfile() {
     },[]);
 
 
-if (isLoadedUser){
+if (!infoAboutLoggedUser){
    return <Loader/>
 }else{
         return (

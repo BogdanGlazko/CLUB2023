@@ -63,13 +63,12 @@ const SocialInfoAboutUser = () => {
                                         }}>send</Button>
                                     </div>
                                     :
-
                                     userData?.fullName ?
                                         <div className={s.contentAndLinks}>
                                             {userData!.fullName}
                                         </div>
                                         :
-                                        <span></span>}
+                                        <span>Nety</span>}
                             </div>
                         </div>
                         {isInputActive === "NameInput" ?

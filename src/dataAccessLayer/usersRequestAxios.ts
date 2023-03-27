@@ -51,12 +51,12 @@ export const UsersRequestAxios = {
         })
     },
 
-    isfollowerUser(userId: number) {
+    isfollowerUser(userId: number|undefined) {
         return apiInstance.get("/follow/"+userId).then((response:AxiosResponse<boolean>) => {
             return response.data
         })
     },
-    statusOfUser(userId: number) {
+    statusOfUser(userId: number|undefined) {
         return apiInstance.get( "/profile/status/"+userId).then((response:AxiosResponse<string>) => {
             return response.data
         })

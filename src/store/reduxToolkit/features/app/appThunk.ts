@@ -10,6 +10,7 @@ import {
     showCaptchaInput
 } from "./appSlice";
 import {ResultCode} from "enum/AppEnums";
+import {getUserForMyProfile} from "../myProfile-page/myProfileThunks";
 
 export const loginUser = (data: { userName: string, userPassword: string,rememberMe:boolean, captcha:string }) => async (dispatch: AppDispatch) => {
     try {
@@ -67,12 +68,12 @@ try {
 
 export const isLoggedUser = () => async (dispatch: AppDispatch) => {
     try {
-        dispatch(loading(true))
+        await dispatch(loading(true))
         const response = await LoginRequestAxios.ifUserLoggined()
         if (response.data.resultCode === 0) {
-            dispatch(setUserData(response.data.data))
-            dispatch(changeIsLoginUser(true))
-            dispatch(loading(false))
+            await dispatch(setUserData(response.data.data))
+            await dispatch(changeIsLoginUser(true))
+            await dispatch(loading(false))
         } else {
             dispatch(loading(false))
         }

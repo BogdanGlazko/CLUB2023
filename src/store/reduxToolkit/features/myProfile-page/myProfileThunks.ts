@@ -5,6 +5,7 @@ import {loadingUser, setStatusOfFollowing, setUserOnProfilePage, setUserStatus} 
 export const getUserForMyProfile = (id:number)=> async (dispatch:AppDispatch)=>{
     try {
         await dispatch(loadingUser(true))
+        console.log("postavil true")
         const response = await UsersRequestAxios.getUserForMyProfile(id)
         await dispatch(setUserOnProfilePage(response))
         const responseFollower = await UsersRequestAxios.isfollowerUser(id)
