@@ -82,10 +82,133 @@ const SocialInfoAboutUser = () => {
                         }
                     </div>
 
+                    {/*website*/}
+
+                    <div className={s.stringWrapper}>
+                        <div className={s.mainInputWrapper}>
+                            <div className={s.nameOfResource}>Website Address :</div>
+                            <div>
+                                {isInputActive === "WebSiteInput" ?
+                                    <div className={s.inputWrapper}>
+                                        <div className={s.inputPosition}>
+                                            <Input
+                                                sx={{
+                                                    minWidth: 250,
+                                                }}
+                                                placeholder={"Insert your Website link"}
+                                                onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                                                    changeInputValue(event.currentTarget.value)
+                                                }
+                                                }/>
+                                        </div>
+                                        <Button onClick={() => {
+                                            changeAndSendInputValue("webSite")
+                                        }}>send</Button>
+                                    </div> :
+                                    userData!.contacts!.website ?
+                                        <div className={s.contentAndLinks}>{userData!.contacts!.website}</div> :
+                                        <span> Add website Link </span>
+                                }
+                            </div>
+                        </div>
+                        {isInputActive === "WebSiteInput" ?
+                            <div className={s.changeLink} onClick={() => {
+                                handleChangeInfo("")
+                            }}>Close</div> :
+                            <div className={s.changeLink} onClick={() => {
+                                handleChangeInfo("WebSiteInput")
+                            }}>Change</div>
+                        }
+                    </div>
 
 
+                    {/*github*/}
 
-                    
+                    <div className={s.stringWrapper}>
+                        <div className={s.mainInputWrapper}>
+                            <div className={s.nameOfResource}>GitHub Link :</div>
+                            <div>
+                                {isInputActive === "GitHubInput" ?
+                                    <div className={s.inputWrapper}>
+                                        <div className={s.inputPosition}>
+                                            <Input
+                                                sx={{
+                                                    minWidth: 250,
+                                                }}
+                                                placeholder={"Insert GitHub link"}
+                                                onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                                                    changeInputValue(event.currentTarget.value)
+                                                }
+                                                }/>
+                                        </div>
+                                        <Button onClick={() => {
+                                            changeAndSendInputValue("GitHub")
+                                        }}>send</Button>
+                                    </div>
+                                    :
+                                    userData!.contacts!.github ?
+                                        <div className={s.contentAndLinks}>
+                                            {userData!.contacts!.github}
+                                        </div> :
+                                        <span>  Add GitHub Link </span>
+                                }
+
+
+                            </div>
+                        </div>
+                        {isInputActive === "GitHubInput" ?
+                            <div className={s.changeLink} onClick={() => {
+                                handleChangeInfo("")
+                            }}>Close</div> :
+                            <div className={s.changeLink} onClick={() => {
+                                handleChangeInfo("GitHubInput")
+                            }}>Change</div>
+                        }
+                    </div>
+
+
+                    {/*instagram*/}
+
+                    <div className={s.stringWrapper}>
+
+                        <div className={s.mainInputWrapper}>
+                            <div className={s.nameOfResource}> Instagram :</div>
+                            <div>
+                                {isInputActive === "InstagramInput" ?
+                                    <div className={s.inputWrapper}>
+                                        <div className={s.inputPosition}>
+                                            <Input
+                                                sx={{
+                                                    minWidth: 250,
+                                                }}
+                                                placeholder={"Insert your Instagramm link"}
+                                                onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+                                                    changeInputValue(event.currentTarget.value)
+                                                }
+                                                }/>
+                                        </div>
+                                        <Button onClick={() => {
+                                            changeAndSendInputValue("Instagram")
+                                        }}>send</Button>
+                                    </div> :
+                                    userData!.contacts!.instagram ?
+                                        <div className={s.contentAndLinks}>
+                                            {userData!.contacts!.instagram}
+                                        </div>
+                                        :
+                                        <span>  Add Instagram Link </span>
+                                }
+                            </div>
+                        </div>
+                        {isInputActive === "InstagramInput" ?
+                            <div className={s.changeLink} onClick={() => {
+                                handleChangeInfo("")
+                            }}>Close</div> :
+                            <div className={s.changeLink} onClick={() => {
+                                handleChangeInfo("InstagramInput")
+                            }}>Change</div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

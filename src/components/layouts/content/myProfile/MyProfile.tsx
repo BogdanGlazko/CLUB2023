@@ -28,14 +28,14 @@ function MyProfile() {
     console.log(infoAboutLoggedUser)
 
     useEffect(() => {
-        if (state) {
+        if (state.id) {
             dispatch(getUserForMyProfile(state.id))
         } else {
             if (infoAboutLoggedUser){
                 dispatch(getUserForMyProfile(infoAboutLoggedUser.id))
             }
         }
-    }, [state])
+    }, [state,infoAboutLoggedUser])
 
 
     useEffect(() => {
