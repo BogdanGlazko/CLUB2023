@@ -64,7 +64,7 @@ const SocialInfoAboutUser = () => {
                                     </div>
                                     :
 
-                                    userData!.fullName ?
+                                    userData?.fullName ?
                                         <div className={s.contentAndLinks}>
                                             {userData!.fullName}
                                         </div>
@@ -105,8 +105,10 @@ const SocialInfoAboutUser = () => {
                                             changeAndSendInputValue("webSite")
                                         }}>send</Button>
                                     </div> :
-                                    userData!.contacts!.website ?
-                                        <div className={s.contentAndLinks}>{userData!.contacts!.website}</div> :
+                                    userData.contacts?.website ?
+                                        <div className={s.contentAndLinks}>
+                                            {userData.contacts.website}
+                                        </div> :
                                         <span> Add website Link </span>
                                 }
                             </div>
@@ -146,9 +148,9 @@ const SocialInfoAboutUser = () => {
                                         }}>send</Button>
                                     </div>
                                     :
-                                    userData!.contacts!.github ?
+                                    userData.contacts?.github ?
                                         <div className={s.contentAndLinks}>
-                                            {userData!.contacts!.github}
+                                            {userData.contacts.github}
                                         </div> :
                                         <span>  Add GitHub Link </span>
                                 }
@@ -191,9 +193,9 @@ const SocialInfoAboutUser = () => {
                                             changeAndSendInputValue("Instagram")
                                         }}>send</Button>
                                     </div> :
-                                    userData!.contacts!.instagram ?
+                                    userData?.contacts?.instagram ?
                                         <div className={s.contentAndLinks}>
-                                            {userData!.contacts!.instagram}
+                                            {userData.contacts.instagram}
                                         </div>
                                         :
                                         <span>  Add Instagram Link </span>

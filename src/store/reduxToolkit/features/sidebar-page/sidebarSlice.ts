@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface ISidebarState {
-    userDataSidebar:null|
+    userDataSidebar:
         {id: null|number,
         login: null|string,
         email:null|string,
@@ -25,11 +25,11 @@ export const sidebarSlice = createSlice({
     initialState,
     reducers: {
         setUserDataSidebarPhotos: (state: ISidebarState, action:PayloadAction<any>) => {
-                state.userDataSidebar!.photos = action.payload
+                state.userDataSidebar.photos = action.payload.photos
 
         },
         setUserDataSidebarName: (state: ISidebarState, action:PayloadAction<any>) => {
-            state.userDataSidebar!.fullName = action.payload
+            state.userDataSidebar.fullName = action.payload.fullName
         }
     }
 })

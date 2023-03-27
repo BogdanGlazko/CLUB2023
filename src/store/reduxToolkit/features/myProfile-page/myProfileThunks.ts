@@ -1,18 +1,17 @@
 import {AppDispatch} from "../../../reduxToolkit";
 import {UsersRequestAxios} from "dataAccessLayer/usersRequestAxios";
-import {setStatusOfFollowing, setUserOnProfilePage, setUserStatus} from "./myProfileSlice";
+import {loadingUser, setStatusOfFollowing, setUserOnProfilePage, setUserStatus} from "./myProfileSlice";
 
 export const getUserForMyProfile = (id:number)=> async (dispatch:AppDispatch)=>{
     try {
+        await dispatch(loadingUser(true))
         const response = await UsersRequestAxios.getUserForMyProfile(id)
-        console.log(response)
         await dispatch(setUserOnProfilePage(response))
         const responseFollower = await UsersRequestAxios.isfollowerUser(id)
-        console.log(responseFollower)
         await dispatch(setStatusOfFollowing(responseFollower))
         const responseStatus = await UsersRequestAxios.statusOfUser(id)
-        console.log(responseStatus)
-        dispatch(setUserStatus(responseStatus))
+        await dispatch(setUserStatus(responseStatus))
+        await dispatch(loadingUser(false))
     } catch (error){
         console.log(error)
     }

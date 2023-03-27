@@ -1,27 +1,22 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-export interface IUserData {
-
-    aboutMe: null | string
-    contacts: {
-        facebook:null,
-        github: null,
-        instagram: null,
-        mainLink: null,
-        twitter: null,
-        vk: null,
-        website: null,
-        youtube: null, } | null
-    fullName: string | null
-    lookingForAJob: boolean | null
-    lookingForAJobDescription: null| string
-    photos: { small: null|string, large: null|string}
-    userId: null | string
-    isFollower: boolean | null
-    status:null|string
+export interface User {
+    aboutMe: string | null;
+    contacts: { website:string,instagram:string,github:string } | null;
+    fullName: string | null;
+    lookingForAJob: boolean | null;
+    lookingForAJobDescription: string | null;
+    photos: { small: string | null; large: string | null };
+    userId: number | null;
+    isFollower: boolean | null;
+    status: string | null;
 }
 
-export const initialState: { users: null | IUserData } = {
+export interface IUserData {
+    users: User;
+    loading: boolean;
+}
+export const initialState: IUserData = {
     users:{
         aboutMe: null,
         contacts:  null,
@@ -32,7 +27,8 @@ export const initialState: { users: null | IUserData } = {
         userId: null,
         isFollower: null,
         status:null
-    }
+    },
+    loading:false
 }
 
 
@@ -40,7 +36,7 @@ export const friendsSlice = createSlice({
     name: "usersReducer",
     initialState,
     reducers: {
-        setUserOnProfilePage: (state = initialState, action:  PayloadAction<IUserData>) => {
+        setUserOnProfilePage: (state = initialState, action:  PayloadAction<any>) => {
             state.users = action.payload
         },
         setStatusOfFollowing: (state = initialState, action:  PayloadAction<boolean>) => {
@@ -48,6 +44,9 @@ export const friendsSlice = createSlice({
         },
         setUserStatus: (state = initialState, action:  PayloadAction<string>) => {
             state.users!.status = action.payload
+        },
+        loadingUser:(state:IUserData,action:PayloadAction<boolean>) =>{
+            state.loading = action.payload
         }
     }
 });
@@ -56,7 +55,8 @@ export const friendsSlice = createSlice({
 export const {
     setUserOnProfilePage,
     setStatusOfFollowing,
-    setUserStatus
+    setUserStatus,
+    loadingUser
 } = friendsSlice.actions;
 export default friendsSlice.reducer;
 

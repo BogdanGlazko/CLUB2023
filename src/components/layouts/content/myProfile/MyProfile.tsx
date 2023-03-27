@@ -7,7 +7,11 @@ import {NavLink, useLocation} from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
 import {useTypeDispatch} from "hooks/useTypeDispatch";
 import {useSelector} from "react-redux";
-import {getIsFollower, getUserDataForProfilePage} from "store/reduxToolkit/features/myProfile-page/myProfileSelectors";
+import {
+    getIsFollower,
+    getUserDataForProfilePage,
+    isLoadingUser
+} from "store/reduxToolkit/features/myProfile-page/myProfileSelectors";
 import {getUserData} from "store/reduxToolkit/features/app/appSelectors";
 import {
     followUser,
@@ -20,6 +24,7 @@ import Loader from "../../../shared/additionalComponents/Loader";
 
 function MyProfile() {
     const dispatch = useTypeDispatch()
+    const isLoadedUser = useSelector(isLoadingUser)
     const location = useLocation();
     const {state}: any = location;
     const dataAboutUser = useSelector(getUserDataForProfilePage)
@@ -28,7 +33,7 @@ function MyProfile() {
     console.log(infoAboutLoggedUser)
 
     useEffect(() => {
-        if (state.id) {
+        if (state) {
             dispatch(getUserForMyProfile(state.id))
         } else {
             if (infoAboutLoggedUser){
@@ -47,9 +52,9 @@ function MyProfile() {
     },[]);
 
 
-    if (!dataAboutUser?.fullName) {
-        return <Loader/>
-    } else {
+if (isLoadedUser){
+   return <Loader/>
+}else{
         return (
             <div id={"userMainInfoWrapper"}>
                 <div className={s.userMainInfo} id={"userMainInfo"}>
@@ -395,10 +400,7 @@ function MyProfile() {
 
             </div>
         );
-    }
-
-
-
+}
 }
 
 export default MyProfile;
