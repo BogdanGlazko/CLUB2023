@@ -51,7 +51,7 @@ function MyProfile() {
     },[]);
 
 
-if (!infoAboutLoggedUser){
+if (!dataAboutUser.fullName){
    return <Loader/>
 }else{
         return (

@@ -26,7 +26,7 @@ function Content() {
                     <ScrollButton/>
                     <Routes location={location}>
                         <Route path="profile" element={<MyProfile/>}/>
-                        <Route path="*" element={<Navigate to="/profile"/>}/>
+                        <Route path="*" element={<Navigate to="/messages"/>}/>
                         <Route path="messages" element={<Messages/>}/>
                         <Route path="feed" element={<Feed/>}/>
                         <Route path="friends" element={<Friends/>}/>
