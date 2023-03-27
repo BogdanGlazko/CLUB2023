@@ -23,7 +23,7 @@ const UserInfo = () => {
     })
 
    if(!userData){
-       return null
+       return <div>SERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</div>
    }
     return (
         <>
