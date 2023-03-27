@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/CLUB2023/static/css/main.550ff20a.css",
+    "main.css": "/CLUB2023/static/css/main.ab232269.css",
     "main.js": "/CLUB2023/static/js/main.5674e7c4.js",
     "static/media/club.png": "/CLUB2023/static/media/club.d622c4b09892b2b77537.png",
     "index.html": "/CLUB2023/index.html",
-    "main.550ff20a.css.map": "/CLUB2023/static/css/main.550ff20a.css.map",
+    "main.ab232269.css.map": "/CLUB2023/static/css/main.ab232269.css.map",
     "main.5674e7c4.js.map": "/CLUB2023/static/js/main.5674e7c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.550ff20a.css",
+    "static/css/main.ab232269.css",
     "static/js/main.5674e7c4.js"
   ]
 }
