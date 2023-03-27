@@ -60,14 +60,15 @@ if (!dataAboutUser.fullName){
                     <div className={s.userMainInfoContainer}>
                         <div className={s.circleAvatar}>
                             {(dataAboutUser?.photos.large === null) ?
+                                !dataAboutUser.fullName?<div></div>:
                                 <Avatar {...getDefaultAvatar(dataAboutUser.fullName, 235, 235, 2.5)}/> :
                                 <img src={dataAboutUser?.photos.large} alt="userPhoto"/>
                             }
                         </div>
                         <div className={s.userInfo}>
-                            <div className={s.nameOfUser}>{dataAboutUser?.fullName}</div>
+                            <div className={s.nameOfUser}>{!dataAboutUser?.fullName?"without name":dataAboutUser?.fullName}</div>
                             <div className={s.aboutUser}>
-                                {(dataAboutUser?.status === null) ?
+                                {!dataAboutUser?.status ?
                                     "I'am without status:(" :
                                     dataAboutUser?.status
                                 }
