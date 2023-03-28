@@ -36,7 +36,7 @@ function MyProfile() {
             dispatch(getUserForMyProfile(state.id))
         } else {
             if (infoAboutLoggedUser){
-                dispatch(getUserForMyProfile(infoAboutLoggedUser.id))
+                setTimeout(()=>dispatch(getUserForMyProfile(infoAboutLoggedUser.id)),2000)
             }
         }
     }, [state,infoAboutLoggedUser])
@@ -51,9 +51,6 @@ function MyProfile() {
     },[]);
 
 
-// if (dataAboutUser.fullName === null){
-//    return <Loader/>
-// }else{
         return (
             (dataAboutUser.fullName === null) ? <Loader/>:
 
@@ -403,7 +400,6 @@ function MyProfile() {
 
             </div>
         );
-// }
 }
 
 export default MyProfile;
