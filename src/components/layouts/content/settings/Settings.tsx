@@ -7,9 +7,9 @@ export default function Settings() {
     return (
         <div className={s.settingsWrapper}>
            <div className={s.userInfoWrapper}>
-               {/*<UserInfo/>*/}
+               <UserInfo/>
            </div>
-            {/*<CropperModal/>*/}
+            <CropperModal/>
             <SocialInfoAboutUser/>
 
         </div>

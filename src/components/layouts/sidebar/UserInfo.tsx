@@ -20,29 +20,29 @@ const UserInfo = () => {
                 dispatch(getInfoForSidebar(userData!.id))
             }
         }
-    })
+    },[userData])
 
-   if(!userData){
-       return <div>SERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</div>
-   }
+
     return (
+        !userData ? <div>SERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</div> :
         <>
             <div className={s.photoWrapper}>
                 {
-                    (userDataForSidebar?.fullName==="")?
+                    (userDataForSidebar?.fullName === "") ?
                         <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img3.jpg"
                              alt="userPhoto"/> :
-                    userDataForSidebar?.photos.small ?
-                        <img src={userDataForSidebar?.photos.small}
-                             alt="avatar"/>:
-                        <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName,92,92,2.5)} />
+                        userDataForSidebar?.photos.small ?
+                            <img src={userDataForSidebar?.photos.small}
+                                 alt="avatar"/> :
+                            <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 92, 92, 2.5)} />
                 }
             </div>
             <div className={s.name}>
-                {userDataForSidebar ? userDataForSidebar!.fullName:"null"}
+                {userDataForSidebar ? userDataForSidebar!.fullName : "null"}
             </div>
             <br/>
         </>
+
     );
 }
 export default UserInfo;

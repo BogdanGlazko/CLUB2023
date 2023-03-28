@@ -51,10 +51,12 @@ function MyProfile() {
     },[]);
 
 
-if (dataAboutUser.fullName === null){
-   return <Loader/>
-}else{
+// if (dataAboutUser.fullName === null){
+//    return <Loader/>
+// }else{
         return (
+            (dataAboutUser.fullName === null) ? <Loader/>:
+
             <div id={"userMainInfoWrapper"}>
                 <div className={s.userMainInfo} id={"userMainInfo"}>
                     <div className={s.userMainInfoContainer}>
@@ -401,7 +403,7 @@ if (dataAboutUser.fullName === null){
 
             </div>
         );
-}
+// }
 }
 
 export default MyProfile;

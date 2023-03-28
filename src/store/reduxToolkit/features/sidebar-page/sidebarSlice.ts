@@ -11,8 +11,8 @@ interface ISidebarState {
 }
 
 const initialState: ISidebarState = {
-    userDataSidebar:
-        {id: null,
+    userDataSidebar: {
+        id: null,
         login: null,
         email:null,
         photos:{small:undefined,large:undefined},
@@ -25,8 +25,7 @@ export const sidebarSlice = createSlice({
     initialState,
     reducers: {
         setUserDataSidebarPhotos: (state: ISidebarState, action:PayloadAction<any>) => {
-                state.userDataSidebar.photos = action.payload.photos
-
+            state.userDataSidebar.photos = action.payload.photos
         },
         setUserDataSidebarName: (state: ISidebarState, action:PayloadAction<any>) => {
             state.userDataSidebar.fullName = action.payload.fullName
