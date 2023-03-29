@@ -15,6 +15,7 @@ export interface User {
 export interface IUserData {
     users: User;
     loading: boolean;
+    userID:number|null
 }
 export const initialState: IUserData = {
     users:{
@@ -28,7 +29,8 @@ export const initialState: IUserData = {
         isFollower: null,
         status:null
     },
-    loading:false
+    loading:false,
+    userID:null
 }
 
 
@@ -47,7 +49,11 @@ export const friendsSlice = createSlice({
         },
         loadingUser:(state:IUserData,action:PayloadAction<boolean>) =>{
             state.loading = action.payload
-        }
+        },
+        setId:(state:IUserData,action:PayloadAction<number>) =>{
+            state.userID = action.payload
+        },
+
     }
 });
 
@@ -56,7 +62,8 @@ export const {
     setUserOnProfilePage,
     setStatusOfFollowing,
     setUserStatus,
-    loadingUser
+    loadingUser,
+    setId
 } = friendsSlice.actions;
 export default friendsSlice.reducer;
 

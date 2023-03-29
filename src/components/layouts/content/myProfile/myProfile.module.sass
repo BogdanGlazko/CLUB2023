@@ -11,8 +11,8 @@
   border-radius: 50%
   border: solid 6px
   background: linear-gradient(90deg, rgba(100, 92, 227, 1) 0%, rgba(103, 103, 199, 0.45) 100%)
-  width: 235px
-  height: 235px
+  width: 224px
+  height: 224px
 
 
 .imagesWrapper
@@ -20,19 +20,24 @@
 
 
 .userMainInfo
-  width: 100vw
+  width: 100%
   display: flex
   flex-direction: column
   justify-content: flex-start
   align-items: flex-start
-  padding: 90px 70px 0 70px
+  margin: 80px 70px 0 60px
 
 
 .aboutUser
   margin-bottom: 25px
-  width: 85%
+  width: 65%
   text-align: justify
-  height: 25px
+  font-size: 15px
+  font-weight: 400
+  line-height: 27px
+  letter-spacing: 0em
+  text-align: left
+
 
 
 .buttons
@@ -48,7 +53,7 @@
   margin-right: 12px
   border-radius: 20px
   height: 16rem
-  width: 9rem
+  width: 11.5rem
   object-fit: cover
 
 
@@ -67,7 +72,7 @@
 
 
 .explore
-  width: 60vw
+  width: 80%
   margin-top: 85px
 
 
@@ -82,14 +87,14 @@
   display: flex
   flex-direction: column
   align-items: flex-start
-  margin-left: 50px
-  width: 50%
+  margin-left: 40px
+  width: 60%
 
 
 .imagesExplore
   display: flex
   flex-direction: row
-  width: 60vw
+  width: 121%
   flex-wrap: wrap
   margin-bottom: 25px
 
@@ -99,7 +104,7 @@
   margin-bottom: 12px
   border-radius: 5px
   height: 16rem
-  width: 12rem
+  width: 15.3rem
   object-fit: cover
   opacity: 1
   transition: .5s ease
@@ -110,9 +115,9 @@
   display: flex
   flex-direction: row
   justify-content: space-around
-  width: 0rem
+  width: 3.3rem
   height: 4rem
-  margin-top: -17.3rem
+  margin-top: -17rem
   margin-bottom: 3rem
   padding: 6rem
   transition: 0.5s ease
@@ -134,21 +139,32 @@
 .nameOfUser
   font-family: "Inter", sans-serif
   font-weight: 600
-  font-size: 1.5rem
+  font-size: 24px
+  color: #333333
   margin-bottom: 0.5rem
   color: rgba(0, 0, 0, 0.82)
 
 
 .boldHeader
-  color: rgba(0, 0, 0, 0.91)
+  color: #111827
+  font-family: "Inter",sans-serif
+  font-size: 24px
+  font-weight: 800
+  line-height: 32px
+  letter-spacing: -0.6000000238418579px
+  text-align: left
+
+
 
 
 .infoAboutFollowers
   display: flex
   flex-direction: row
   flex-wrap: wrap
+  min-width: 250px
   color: #666
-  font-size: 1.125rem
+  font-size: 18px
+  font-weight: 400
   line-height: 1.75rem
 
 
@@ -156,6 +172,16 @@
   font-weight: bold
   margin-right: 10px
 
+.infoAboutFollowers div
+  width: 12vw
+  text-align: left
+
+.infoAboutFollowers :nth-child(2)
+  border-left: #4f4f4f solid 1px
+  border-right: #4f4f4f solid 1px
+  padding-left: 30px
+.infoAboutFollowers :nth-child(3)
+  padding-left: 30px
 
 .addPhotoBlock
   display: flex
@@ -164,11 +190,12 @@
   border: rgba(128, 128, 128, 0.25) dashed 4px
   margin-right: 12px
   border-radius: 20px
-  height: 16rem
-  width: 9rem
+  height: 15.5rem
+  width: 11.5rem
   object-fit: cover
   font-size: 15px
   color: rgba(128, 128, 128, 0.75)
+  margin-bottom: 15px
 
 
 .addPhotoBlock div:hover
@@ -201,11 +228,6 @@
   padding-right: 20px
 
 
-/*.imagesExplore div */
-/*    height: 16rem*/
-/*    width: 9rem*/
-/**/
-
 
 .loadMoreButton
   font-family: 'Maven Pro', sans-serif
@@ -217,7 +239,7 @@
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4)
   border-radius: 45px
   background-color: #ffffff
-  margin-bottom: 25px
+  margin-bottom: 90px
 
 
 .loadMoreButton:hover
@@ -239,6 +261,7 @@
   display: flex
   flex-direction: row
   align-items: center
+  justify-content: space-between
 
 
 .buttonsChangeLayout svg
@@ -295,22 +318,26 @@
   position: fixed
   right: 90px
 
-@media only screen and (max-width: 1100px)
+@media only screen and (max-width: 1160px)
     .userMainInfoContainer
      align-items: flex-start
      align-items: flex-start
      flex-direction: column
     .userInfo
-
      width: 70%
      margin: 30px 0 0 0
     .userMainInfo
      padding-top: 20px
     .imagesExplore
      justify-content: space-between
+     width: 100%
     .imagesRecent img
       margin-bottom: 15px
-
+    .infoAboutFollowers div
+     display: flex
+     flex-direction: column
+    .aboutUser
+      width: 80%
 
 @media only screen and (max-width: 767px)
   .userMainInfo
@@ -326,11 +353,23 @@
     width: 95%
   .explore
     width: 78vw
+  .infoAboutFollowers div
+   flex-direction: column
+    font-size: 15px
 
+  .infoAboutFollowers :nth-child(1)
+    padding-right: 15px
+  .infoAboutFollowers :nth-child(2)
+   padding-left: 30px
+   padding-right: 45px
+
+@media only screen and (max-width: 550px)
+  .userMainInfo
+    margin: 30px 0px 0px 10px
 
 @media only screen and (max-width: 390px)
   .userMainInfo
-    padding: 30px 0px 0px 10px
+    padding: 30px 0px 0px 5px
     width: 90vw
   .imagesExplore img
     height: 16rem
@@ -347,3 +386,11 @@
     flex-direction: column
   .recent>div
     font-size: 26px
+  .infoAboutFollowers
+    flex-direction: column
+  .infoAboutFollowers :nth-child(2)
+    margin: 20px 0 20px 0
+    border: none
+    padding: 0
+  .infoAboutFollowers :nth-child(3)
+    padding: 0

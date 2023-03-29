@@ -1,18 +1,23 @@
 import {AppDispatch} from "../../../reduxToolkit";
 import {UsersRequestAxios} from "dataAccessLayer/usersRequestAxios";
-import {loadingUser, setStatusOfFollowing, setUserOnProfilePage, setUserStatus} from "./myProfileSlice";
+import {loadingUser, setId, setStatusOfFollowing, setUserOnProfilePage, setUserStatus} from "./myProfileSlice";
+import {changeIsLoginUser, loading, setUserData} from "../app/appSlice";
+import {LoginRequestAxios} from "../../../../dataAccessLayer/loginLogoutRequestAxios";
 
-export const getUserForMyProfile = (id:number)=> async (dispatch:AppDispatch)=>{
+export const getUserForMyProfile = (id:number|null)=> async (dispatch:AppDispatch)=>{
     try {
-        await dispatch(loadingUser(true))
+        if (id===null){
+            return console.log(":((((")
+        }
+         dispatch(loadingUser(true))
         console.log("postavil true")
         const response = await UsersRequestAxios.getUserForMyProfile(id)
-        await dispatch(setUserOnProfilePage(response))
+         dispatch(setUserOnProfilePage(response))
         const responseFollower = await UsersRequestAxios.isfollowerUser(id)
-        await dispatch(setStatusOfFollowing(responseFollower))
+         dispatch(setStatusOfFollowing(responseFollower))
         const responseStatus = await UsersRequestAxios.statusOfUser(id)
-        await dispatch(setUserStatus(responseStatus))
-        await dispatch(loadingUser(false))
+         dispatch(setUserStatus(responseStatus))
+         dispatch(loadingUser(false))
     } catch (error){
         console.log(error)
     }
@@ -23,7 +28,7 @@ export const unFollowUser = (id: number) => async (dispatch: AppDispatch) => {
         console.log(id)
         const response = await UsersRequestAxios.unFollowUser(id)
         console.log(response)
-        await dispatch(setStatusOfFollowing(false))
+         dispatch(setStatusOfFollowing(false))
     }catch (error){
         console.log("ошибочка!" + error)
     }
@@ -41,3 +46,21 @@ export const followUser = (id: number) => async (dispatch: AppDispatch) => {
     }
 
 }
+
+
+
+export const checkAndSetUser = () => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(loading(true))
+        const response = await LoginRequestAxios.ifUserLoggined()
+        if (response.data.resultCode === 0) {
+            dispatch(setId(response.data.data!.userId))
+            dispatch(loading(false))
+        } else {
+            dispatch(loading(false))
+        }
+    }catch (error){
+        console.log(error)
+    }
+}
+

@@ -35,7 +35,7 @@ export const UsersRequestAxios = {
             }
         })
     },
-    getUserForMyProfile(id:number|undefined){
+    getUserForMyProfile(id:number){
         console.log(id)
         return apiInstance.get("/profile/"+id).then((response:AxiosResponse<IUserData>)=>{
             console.log(response.data)

@@ -1,6 +1,7 @@
 import {RootState} from "store/reduxToolkit";
 
 export const getLoading = (state:RootState) => state.appPage.loading
+export const getStateOfLogin = (state:RootState) => state.appPage.isLogginedUser
 export const  getErrorDiv = (state:RootState)=>state.appPage.errorDiv
 export const getUserData=(state:RootState)=>state.appPage.userData
 export const getCaptchaStatus =(state:RootState)=> state.appPage.captchaStatus

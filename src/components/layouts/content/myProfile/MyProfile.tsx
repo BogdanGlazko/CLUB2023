@@ -25,8 +25,8 @@ import Loader from "../../../shared/additionalComponents/Loader";
 function MyProfile() {
     const dispatch = useTypeDispatch()
     const isLoadedUser = useSelector(isLoadingUser)
-    const location = useLocation();
-    const {state}: any = location;
+    const {state} = useLocation();
+
     const dataAboutUser = useSelector(getUserDataForProfilePage)
     const isFollowerUser = useSelector(getIsFollower)
     const infoAboutLoggedUser = useSelector(getUserData)
@@ -36,10 +36,11 @@ function MyProfile() {
             dispatch(getUserForMyProfile(state.id))
         } else {
             if (infoAboutLoggedUser){
-                setTimeout(()=>dispatch(getUserForMyProfile(infoAboutLoggedUser.id)),2000)
+                console.log(infoAboutLoggedUser.id)
+                dispatch(getUserForMyProfile(infoAboutLoggedUser.id))
             }
         }
-    }, [state,infoAboutLoggedUser])
+    }, [state])
 
 
     useEffect(() => {
@@ -66,12 +67,18 @@ function MyProfile() {
                             }
                         </div>
                         <div className={s.userInfo}>
-                            <div className={s.nameOfUser}>{!dataAboutUser?.fullName?"without name":dataAboutUser?.fullName}</div>
+                            <div className={s.nameOfUser}>
+                                {!dataAboutUser?.fullName?"without name":dataAboutUser?.fullName}
+                            </div>
                             <div className={s.aboutUser}>
                                 {!dataAboutUser?.status ?
                                     "I'am without status:(" :
                                     dataAboutUser?.status
                                 }
+                            </div>
+                            <div className={s.aboutUser}>
+                                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet
+                                doming id quod mazim placerat facer possim assum
                             </div>
 
                             <div className={s.buttons}>
@@ -107,9 +114,7 @@ function MyProfile() {
                             </div>
                             <div className={s.infoAboutFollowers}>
                                 <div>120k <span>posts</span></div>
-                                |
                                 <div>420k <span>followers</span></div>
-                                |
                                 <div> 530k <span>followers</span></div>
                             </div>
                         </div>

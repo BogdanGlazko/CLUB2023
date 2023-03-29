@@ -68,12 +68,13 @@ try {
 
 export const isLoggedUser = () => async (dispatch: AppDispatch) => {
     try {
-        await dispatch(loading(true))
+        console.log("tyta1")
+        dispatch(loading(true))
         const response = await LoginRequestAxios.ifUserLoggined()
         if (response.data.resultCode === 0) {
-            await dispatch(setUserData(response.data.data))
-            await dispatch(changeIsLoginUser(true))
-            await dispatch(loading(false))
+             dispatch(setUserData(response.data.data))
+             dispatch(changeIsLoginUser(true))
+             dispatch(loading(false))
         } else {
             dispatch(loading(false))
         }

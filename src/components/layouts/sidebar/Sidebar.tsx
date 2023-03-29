@@ -25,40 +25,44 @@ const Sidebar = () => {
                   <UserInfo/>
               </div>
                 <div className={s.infoAboutFollowers}>
-                    <div>Posts <br/> <span>21</span></div>
-                    <div>Following <br/> <span>50</span></div>
-                    <div>Followers <br/> <span>60</span></div>
+                    <div className={s.wrapperInfoAboutFollowers}>
+                        <div>Posts <br/> <span>21</span></div>
+                        <div>Following <br/> <span>50</span></div>
+                        <div>Followers <br/> <span>60</span></div>
+                    </div>
                 </div>
+
                 <div className={s.navLinkContent}>
                     <NavLink
                         to="/profile"
                         className={({isActive}) => (isActive ? s.active : s.inactive)}>
                         <ProfileSVG/>
-                        Profile
+                        <div className={s.linkName}>Profile</div>
                     </NavLink>
                     <NavLink
                         to="friends"
                         className={({isActive}) => (isActive ? s.active : s.inactive)}
                     >
                         <FriendsSVG/>
-                        Friends</NavLink>
+                        <div className={s.linkName}>Friends</div>
+                    </NavLink>
                     <NavLink
                         to="messages"
                         className={({isActive}) => (isActive ? s.active : s.inactive)}>
                         <MessagesSVG/>
-                        Messages
+                        <div className={s.linkName}>Messages</div>
                     </NavLink>
                     <NavLink
                         to="chat"
                         className={({isActive}) => (isActive ? s.active : s.inactive)}>
                         <ChatSVG/>
-                        Public Chat
+                        <div className={s.linkName}>Public Chat</div>
                     </NavLink>
                     <NavLink
                         to="marketplace"
                         className={({isActive}) => (isActive ? s.active : s.inactive)}>
                         <MarketPlaceSVG/>
-                        Shop
+                        <div className={s.linkName}>Shop</div>
                     </NavLink>
                     {/*<NavLink*/}
                     {/*    to="feed"*/}
@@ -67,21 +71,24 @@ const Sidebar = () => {
                     {/*    <FeedSVG/>*/}
                     {/*    Feed*/}
                     {/*</NavLink>*/}
-                    <br/>
+
                     <NavLink
                         to="settings"
                         className={({isActive}) => (isActive ? s.active : s.inactive)}
                     >
                         <SettingsSVG/>
-                        Settings
+                        <div className={s.linkName}>Settings</div>
                     </NavLink>
-                    <NavLink
-                        to="logout"
-                        onClick={() => dispatch(logoutUser())}
-                        className={({isActive}) => (isActive ? s.active : s.inactive)}>
-                        <LogoutSVG/>
-                        Logout
-                    </NavLink>
+                    <div className={s.logout}>
+                        <NavLink
+                            to="logout"
+                            onClick={() => dispatch(logoutUser())}
+                            className={({isActive}) => (isActive ? s.active : s.inactive)}>
+                            <LogoutSVG/>
+                            <div className={s.linkName}>Logout</div>
+                        </NavLink>
+                    </div>
+
                 </div>
             </main>
         </div>
