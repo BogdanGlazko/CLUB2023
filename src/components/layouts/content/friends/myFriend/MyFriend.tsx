@@ -31,8 +31,11 @@ const MyFriend = (props: IUserModel) => {
                         <NavLink to="/profile" state={{...props}}>
                             <div className={s.name}>{props.name}</div>
                         </NavLink>
-                        <div className={s.status}>{props.status}</div>
-                        <div>Send Meassage</div>
+                        {/*<div className={s.status}>{props.status}</div>*/}
+                        <NavLink to="/chat">
+                            <div>Send Meassage</div>
+                        </NavLink>
+
                     </div>
                 </div>
                 <div className={s.buttonWrapper}>

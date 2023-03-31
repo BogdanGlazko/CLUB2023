@@ -24,7 +24,8 @@
 .elementHover
   display: flex
   flex-direction: row
-  align-items: flex-start
+  align-items: center
+
 
 .header svg:hover, .header img:hover
   cursor: pointer
@@ -36,7 +37,7 @@
 .logo
   display: flex
   align-items: center
-  width: 300px
+  width: auto
 
 .logo > img
   width: 110px
@@ -65,4 +66,10 @@
 @media only screen and (max-width: 750px)
   .appearancePosition
     margin: 0
+
+@media only screen and (max-width: 360px)
+  .appearancePosition
+    display: none
+
+
 

@@ -23,6 +23,7 @@ const initialState={
                         name: "David Peterson",
                         img: "http://demo.foxthemes.net/instellohtml/assets/images/avatars/avatar-2.jpg"
                     },
+
                     {date: " 28 June, 2022",id: 3},
                     {message: "Hi", id: 1},
                     {message: "its my first hmm what are you doing at the evening hmm what are you doing at the evening message its my firstoh how are you Jack oh how are you Jack message its my first message", id: 1},

@@ -9,7 +9,7 @@ const Messages = () => {
         <>
                 <h2>Messages</h2>
                 <div className={s.messagesPage}>
-                    <ListOfUsers />
+                    <ListOfUsers/>
                     <ListOfMessages />
                 </div>
         </>

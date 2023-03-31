@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./messages.module.sass"
 import {useDispatch, useSelector} from 'react-redux'
-import {addMessage, changeArea} from "store/reduxToolkit/features/messages-page/messagesSlice"
+import {addMessage, changeArea, changeStateOfMessage} from "store/reduxToolkit/features/messages-page/messagesSlice"
 import {AppDispatch} from "store/reduxToolkit";
 import {
     currentMessage,
@@ -66,12 +66,15 @@ const ListOfChats = () => {
                         <div className={s.messagesScroll}>
                             {Object.values(getMessagesPage.users[getCurrentMessage])[0]
                                 .map((e: { id: number; date: string; message: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }) =>
-                                <div
+                                <>
+                                    <div
                                     className={e.id === 1 ? s.one : e.id === 2 ? s.two : e.id === 3 ? s.three : undefined}
-                                    key={e.id + Math.random()}>
+                                    key={e.id}>
+                                        {/*{e.img}*/}
                                     {e.message}
                                     {e.date}
                                 </div>
+                                </>
                             )}
                         </div>
                     </div>

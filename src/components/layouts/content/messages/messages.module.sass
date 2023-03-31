@@ -33,6 +33,13 @@ h2
 
 
 .messages
+  font-family: "Inter", sans-serif
+  font-size: 15px
+  font-weight: 400
+  line-height: 24px
+  letter-spacing: 0em
+
+
   padding-bottom: 10px
   font-size: 14px
   flex-direction: column
@@ -81,7 +88,7 @@ h2
   background: rgba(0, 0, 0, .9)
 /*------------------*/
 
-.listOfUsers div
+.listOfUsers>div
   display: flex
   flex-direction: row
 
@@ -89,24 +96,31 @@ h2
 .listOfUsers img, .currentUserMessages img
   height: 50px
   width: 50px
-  margin-right: 10%
+  margin-right: 14px
 
+.bounceGreen
+  margin-left: 33px
+  position: absolute
+  margin-right: 10px
+  margin-top: 42px
 
 .usersInMessages, .currentUserMessages
-  margin-bottom: 10%
+  height: 74px
   display: flex
   align-items: center
   justify-content: flex-start
   cursor: pointer
+  position: relative
 
 
 .currentUserMessages
+  height: 76px
   margin-bottom: 0
   display: flex
   align-items: center
   justify-content: space-between
   cursor: pointer
-  padding: 1% 1% 1% 1%
+  padding: 11px 11px 8px 11px
   border-bottom: solid rgba(128, 128, 128, 0.24) 1pt
 
 
@@ -115,7 +129,7 @@ h2
 
 
 .usersInMessages
-  margin-left: 10%
+  margin: 12px 16px 12px 16px
 
 
 .one
@@ -124,8 +138,8 @@ h2
   margin-right: 20px
   margin-top: 15px
   max-width: 70%
-  background-color: rgb(37, 99, 234)
-  border-radius: 5px
+  background-color: #2563EB
+  border-radius: 6px
   width: fit-content
   color: white
   text-align: left
@@ -139,7 +153,7 @@ h2
   margin-top: 15px
   text-align: left
   background-color: rgba(234, 234, 234, 0.71)
-  border-radius: 5px
+  border-radius: 6px
   color: #000000
   padding: 1.5%
   width: fit-content
@@ -150,10 +164,69 @@ h2
   clear: both
   margin-top: 15px
 
+.one img, .two img , .three img
+  display: block
+//.avatarOfUserMessage
+//  height: 30px
+//  width: 30px
+
+.avatarOfUserMessage img
+  display: block
+  height: 30px
+  width: 30px
+  border-radius: 50%
+
+.wrapperInfoAboutLastSeen
+  width: 100%
+.infoAboutLastSeen
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+
+.infoAboutLastSeen :nth-child(1)
+  width: 100%
+  display: flex
+  flex-direction: row
+  font-family: "Inter",sans-serif
+  font-size: 15px
+  font-weight: 600
+  line-height: 23px
+  letter-spacing: 0em
+  text-align: left
+  color: black
+
+.infoAboutLastSeen :nth-child(2)
+  width: 100%
+  text-align: left
+
+
+
+.infoAboutLastSeen>div :nth-child(1)
+  white-space: nowrap
+
+.infoAboutLastSeen>div :nth-child(2)
+  text-align: right
+  white-space: nowrap
+  color: #6B7280
+  font-size: 12px
+  color: #4f4f4f
+  font-weight: 400
+  overflow: hidden
+
+.wrapperSearchInput
+  height: 75px
+  border-bottom: 1px solid rgba(80, 80, 80, 0.19)
+  margin-bottom: 12px
+  position: relative
+
 input
-  height: 63px
+  background-color: #F3F4F6
+  height: 40px
   line-height: 48px
-  padding: 10%
+  margin: 15px
+  padding-left: 5%
   outline: none
   font-size: 15px
   color: #808080
@@ -164,16 +237,19 @@ input
   display: block
   font-weight: 400
   opacity: 1
-  border-radius: 4px
+  border-radius: 5px
   border: none
   -webkit-box-shadow: 0 1px 4px 0px rgb(0 0 0 / 12%)
   box-shadow: 0 1px 4px 0px rgb(0 0 0 / 12%)
-
 
 .searchInput
   font-family: 'Inter', sans-serif
   margin-bottom: 40px
 
+.searchInputIcon
+  position: absolute
+  left: 87%
+  top: 32.5%
 
 .inputMessages
   font-family: 'Inter', sans-serif
@@ -182,13 +258,14 @@ input
   justify-content: space-between
   align-items: center
   border-radius: 5px
-  background-color: rgba(241, 241, 241, 0.72)
-  box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px
+  border-top: solid rgba(128, 128, 128, 0.24) 1pt
+  background-color: rgb(255, 255, 255)
+  //box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px
 
 
 .inputMessages button
   font-family: 'Inter', sans-serif
-  background-color: #1d6cae
+  background-color: #2563EB
   border-radius: 10px
   width: 100px
   height: 45px
@@ -200,6 +277,7 @@ input
 
 
 
+
 .textAreaClass
   font-family: 'Inter', sans-serif
   width: 87%
@@ -207,7 +285,7 @@ input
   padding: 12px 20px
   border: none
   border-radius: 4px
-  background-color: rgba(241, 241, 241, 0.72)
+  //background-color: rgba(241, 241, 241, 0.72)
   font-size: 16px
   resize: none
 
@@ -230,7 +308,7 @@ h2
   white-space: nowrap
 
 .userStatusWrapper :nth-child(1)
-  font-size: 17px
+  font-size: 18px
   color: black
 
 
@@ -248,6 +326,13 @@ h2
   display: flex
   flex-direction: column
   align-items: flex-start
+  font-family: "Inter",sans-serif
+  font-size: 14px
+  font-weight: 600
+  line-height: 28px
+  letter-spacing: 0em
+  text-align: left
+
 
 .svgDeleteMediaSmall
   display: none
@@ -255,6 +340,9 @@ h2
 .deleteConversationText
   display: flex
   align-content: center
+  margin-right: 10px
+.deleteConversationText svg
+  margin-right: 10px
 
 @media only screen and (max-width: 1100px)
   .deleteConversationText
@@ -273,7 +361,7 @@ h2
     flex-basis: auto
  .usersInMessages
    margin: 1% 1% 0% 5%
- .searchInput
+ .searchInput, .searchInputIcon svg, .infoAboutLastSeen
    display: none
  .messagesPage
     flex-direction: column
@@ -281,6 +369,5 @@ h2
     height: calc(100vh - 200px)
  .wrapper
     width: auto
-
 
 

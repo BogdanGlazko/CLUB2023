@@ -86,8 +86,8 @@ const ListOfChats: React.FC = () => {
                     </div>
                     <span ref={messagesEndRef}></span>
                 </div>
-            </div>
-            <div className={s.inputMessages}>
+
+                <div className={s.inputMessages}>
                 <textarea
                     onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
                         dispatch(changeValueTextArea(e.currentTarget.value))
@@ -95,12 +95,14 @@ const ListOfChats: React.FC = () => {
                     value={textArea}
                     placeholder={"Your message"}
                 />
-                <Button
-                    disabled={statusWS === "pending"}
-                    onClick={() => {
-                        dispatch(sendMessageToServer(textArea))
-                    }}>Send</Button>
+                    <Button
+                        disabled={statusWS === "pending"}
+                        onClick={() => {
+                            dispatch(sendMessageToServer(textArea))
+                        }}>Send</Button>
+                </div>
             </div>
+
         </>
     );
 }

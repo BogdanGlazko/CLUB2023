@@ -22,7 +22,8 @@
   flex-direction: column
   align-items: center
   width: 100%
-  max-height: 70vh
+  max-height: 77vh
+
 
 .chatPage
   max-height: 100%
@@ -38,8 +39,8 @@ h2
 .inputMessages
   display: flex
   align-items: center
-  width: 55%
-  margin-top: 25px
+  width: 70%
+
 
   button
     margin-left: -80px
@@ -49,25 +50,31 @@ h2
     max-height: 65px
     padding: 20px 63px 0px 15px
     box-sizing: border-box
-    border: 1px solid rgb(204, 204, 204)
-    border-radius: 6px
-    background-color: #f8f8f8
+    border: 1pt solid rgb(236, 236, 236)
+    //border-radius: 6px
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+    background-color: #ffffff
     font-size: 14px
     font-family: 'Inter', sans-serif
     resize: none
 
 
 .messages
+  margin-top: 15px
   height: 100%
   overflow: scroll
   overflow-x: hidden
-  border-bottom: solid rgba(128, 128, 128, 0.24) 1pt
-  border-top: solid rgba(128, 128, 128, 0.24) 1pt
-  width: 65%
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  border: 1pt solid rgb(236, 236, 236)
+  background-color: #ffffff
+  //border-top: solid rgba(128, 128, 128, 0.24) 1pt
+  width: 70%
 
 
 .userMessage
-  margin-bottom: 15px
+  margin: 5px 0 15px 25px
   display: flex
   flex-direction: row
   align-items: center
