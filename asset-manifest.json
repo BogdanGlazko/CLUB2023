@@ -1,14 +1,22 @@
 {
   "files": {
-    "main.css": "/CLUB2023/static/css/main.9f3467fe.css",
-    "main.js": "/CLUB2023/static/js/main.a69ae11e.js",
+    "main.css": "/CLUB2023/static/css/main.7e0ec7b1.css",
+    "main.js": "/CLUB2023/static/js/main.78b09b94.js",
+    "static/media/img4.jpg": "/CLUB2023/static/media/img4.27d3a9d81224b091ee79.jpg",
+    "static/media/img7.jpg": "/CLUB2023/static/media/img7.bc6724c9e52f70d93496.jpg",
+    "static/media/avatar-lg-1.jpg": "/CLUB2023/static/media/avatar-lg-1.56e82a03118c9331fadf.jpg",
+    "static/media/img5.jpg": "/CLUB2023/static/media/img5.13025546866fc378469e.jpg",
+    "static/media/img8.jpg": "/CLUB2023/static/media/img8.d672c261469278d98d71.jpg",
+    "static/media/avatar-6.jpg": "/CLUB2023/static/media/avatar-6.cd4a2094efca15f4b5c0.jpg",
+    "static/media/img2.jpg": "/CLUB2023/static/media/img2.6f77802177ffd3e5040b.jpg",
+    "static/media/img3.jpg": "/CLUB2023/static/media/img3.068b950516100868a22d.jpg",
     "static/media/club.png": "/CLUB2023/static/media/club.d622c4b09892b2b77537.png",
     "index.html": "/CLUB2023/index.html",
-    "main.9f3467fe.css.map": "/CLUB2023/static/css/main.9f3467fe.css.map",
-    "main.a69ae11e.js.map": "/CLUB2023/static/js/main.a69ae11e.js.map"
+    "main.7e0ec7b1.css.map": "/CLUB2023/static/css/main.7e0ec7b1.css.map",
+    "main.78b09b94.js.map": "/CLUB2023/static/js/main.78b09b94.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f3467fe.css",
-    "static/js/main.a69ae11e.js"
+    "static/css/main.7e0ec7b1.css",
+    "static/js/main.78b09b94.js"
   ]
 }
