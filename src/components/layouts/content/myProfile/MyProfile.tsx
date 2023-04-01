@@ -1,10 +1,9 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect} from "react";
 import s from "./myProfile.module.sass"
 import Button from '@mui/material/Button';
 import ViewCompactIcon from '@mui/icons-material/ViewCompact';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import {NavLink, useLocation} from "react-router-dom";
-import ScrollToTop from "react-scroll-to-top";
 import {useTypeDispatch} from "hooks/useTypeDispatch";
 import {useSelector} from "react-redux";
 import {
@@ -21,6 +20,16 @@ import {
 import {getDefaultAvatar} from "util/stringAvatar";
 import Avatar from "@mui/material/Avatar";
 import Loader from "../../../shared/additionalComponents/Loader";
+// images
+import image1 from "assets/images/avatar-1.jpg"
+import image2 from "assets/images/img3.jpg"
+import image3 from "assets/images/avatar-6.jpg"
+import image4 from "assets/images/img2.jpg"
+import image5 from "assets/images/img4.jpg"
+import image6 from "assets/images/img5.jpg"
+import image7 from "assets/images/img7.jpg"
+import image8 from "assets/images/img8.jpg"
+import image9 from "assets/images/avatar-lg-1.jpg"
 
 function MyProfile() {
     const dispatch = useTypeDispatch()
@@ -141,10 +150,10 @@ function MyProfile() {
                                     </div>
 
                                 </div>
-                                <img src="http://demo.foxthemes.net/instellohtml/assets/images/avatars/avatar-lg-1.jpg"
+                                <img src={image9}
                                      alt=""/>
-                                <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img2.jpg" alt=""/>
-                                <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img7.jpg" alt=""/>
+                                <img src={image2} alt=""/>
+                                <img src={image3} alt=""/>
                             </div>
                         </div>
 
@@ -166,7 +175,7 @@ function MyProfile() {
                             <div>
                                 <div className={s.imagesExplore}>
                                     <div className={s.imagesExploreElement}>
-                                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img3.jpg"
+                                        <img src={image4}
                                              alt=""/>
                                         <div className={s.likesComments}>
                                             <div className={s.like}>
@@ -194,7 +203,7 @@ function MyProfile() {
                                         </div>
                                     </div>
                                     <div className={s.imagesExploreElement}>
-                                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img8.jpg"
+                                        <img src={image5}
                                              alt=""/>
                                         <div className={s.likesComments}>
                                             <div className={s.like}>
@@ -222,7 +231,7 @@ function MyProfile() {
                                         </div>
                                     </div>
                                     <div className={s.imagesExploreElement}>
-                                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img7.jpg"
+                                        <img src={image6}
                                              alt=""/>
                                         <div className={s.likesComments}>
                                             <div className={s.like}>
@@ -250,7 +259,7 @@ function MyProfile() {
                                         </div>
                                     </div>
                                     <div className={s.imagesExploreElement}>
-                                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img5.jpg"
+                                        <img src={image8}
                                              alt=""/>
                                         <div className={s.likesComments}>
                                             <div className={s.like}>
@@ -279,7 +288,7 @@ function MyProfile() {
                                     </div>
                                     <div className={s.imagesExploreElement}>
                                         <img
-                                            src="http://demo.foxthemes.net/instellohtml/assets/images/avatars/avatar-6.jpg"
+                                            src={image7}
                                             alt=""/>
 
                                         <div className={s.likesComments}>
@@ -308,7 +317,7 @@ function MyProfile() {
                                         </div>
                                     </div>
                                     <div className={s.imagesExploreElement}>
-                                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img2.jpg"
+                                        <img src={image9}
                                              alt=""/>
 
                                         <div className={s.likesComments}>
@@ -337,7 +346,7 @@ function MyProfile() {
                                         </div>
                                     </div>
                                     <div className={s.imagesExploreElement}>
-                                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img4.jpg"
+                                        <img src={image4}
                                              alt=""/>
                                         <div className={s.likesComments}>
                                             <div className={s.like}>
@@ -366,7 +375,7 @@ function MyProfile() {
                                     </div>
                                     <div className={s.imagesExploreElement}>
                                         <img
-                                            src="	http://demo.foxthemes.net/instellohtml/assets/images/avatars/avatar-1.jpg"
+                                            src={image2}
                                             alt=""/>
                                         <div className={s.likesComments}>
                                             <div className={s.like}>

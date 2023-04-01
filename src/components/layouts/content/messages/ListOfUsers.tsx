@@ -79,7 +79,7 @@ const ListOfUsers = () => {
                                 </defs>
                             </svg>
                         </div>
-                    <div className={s.wrapperInfoAboutLastSeen} key={e.id + Math.random()}>
+                    <div className = {s.wrapperInfoAboutLastSeen} key={e.id + Math.random()}>
                         <div className={s.infoAboutLastSeen}>
                             <div>
                                 <div>{e.name}</div>

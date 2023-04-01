@@ -34,7 +34,7 @@ const UserInfo = () => {
                         userDataForSidebar?.photos.small ?
                             <img src={userDataForSidebar?.photos.small}
                                  alt="avatar"/> :
-                            <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 92, 92, 2.5)} />
+                            <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 100, 100, 2.5)} />
                 }
             </div>
             <div className={s.name}>
