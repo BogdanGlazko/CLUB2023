@@ -10,6 +10,11 @@ import {
     messageTextArea
 } from "store/reduxToolkit/features/messages-page/messagesSelectors";
 
+import image4 from "assets/images/img2.jpg"
+import image5 from "assets/images/img4.jpg"
+import image6 from "assets/images/img5.jpg"
+import image7 from "assets/images/img7.jpg"
+
 const ListOfChats = () => {
 
     const getCurrentUser = useSelector(currentUser)
@@ -58,8 +63,6 @@ const ListOfChats = () => {
                                 </svg>
                                 Delete conversation
                             </div>
-
-
                         </div>
                     </div>
                     <div className={s.messages}>
@@ -71,6 +74,7 @@ const ListOfChats = () => {
                                     className={e.id === 1 ? s.one : e.id === 2 ? s.two : e.id === 3 ? s.three : undefined}
                                     key={e.id}>
                                         {/*{e.img}*/}
+                                        {/*<img src={e.id===1?image4:e.id===2?image6:e.id===3?image7:image5} alt="user"/>*/}
                                     {e.message}
                                     {e.date}
                                 </div>

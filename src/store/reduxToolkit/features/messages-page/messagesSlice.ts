@@ -109,6 +109,7 @@ export const messagesSlice=createSlice({
             state.messageTextarea = action.payload;
         },
         changeStateOfMessage:(state:InitialStateType,action:PayloadAction<any>):void=>{
+            console.log(action.payload)
             state.currentMessage= action.payload.id
             state.currentUser= action.payload
         },
