@@ -10,8 +10,7 @@ import {getUserForMyProfile} from "../myProfile-page/myProfileThunks";
 export const changeUserAvatar = (userAvatarBase64: any) => async (dispatch: AppDispatch) => {
     try {
         const response = dataURLtoFile(userAvatarBase64)
-        const requestToServer =
-            await UsersRequestAxios.setNewAvatar(response)
+        const requestToServer = await UsersRequestAxios.setNewAvatar(response)
         if (requestToServer.resultCode === ResultCode.success) {
             dispatch(setUserDataSidebarPhotos(requestToServer.data.photos))
             dispatch(changeStateOfModalWindow(false))

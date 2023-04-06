@@ -5,7 +5,7 @@ interface ISidebarState {
         {id: null|number,
         login: null|string,
         email:null|string,
-        photos:{small:undefined|string|null,large:undefined|string|null},
+        photos:{small: undefined | string | null, large: undefined | string | null},
         fullName:string
         }
 }
@@ -15,7 +15,7 @@ const initialState: ISidebarState = {
         id: null,
         login: null,
         email:null,
-        photos:{small:undefined,large:undefined},
+        photos:{small:"",large:""},
         fullName:""
     }
 }
@@ -25,7 +25,8 @@ export const sidebarSlice = createSlice({
     initialState,
     reducers: {
         setUserDataSidebarPhotos: (state: ISidebarState, action:PayloadAction<any>) => {
-            state.userDataSidebar.photos = action.payload.photos
+            console.log(action.payload)
+            state.userDataSidebar.photos = action.payload
         },
         setUserDataSidebarName: (state: ISidebarState, action:PayloadAction<any>) => {
             state.userDataSidebar.fullName = action.payload.fullName

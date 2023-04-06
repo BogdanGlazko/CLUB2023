@@ -7,7 +7,9 @@ import {messagesPage} from "store/reduxToolkit/features/messages-page/messagesSe
 import image4 from "assets/images/img2.jpg"
 import image5 from "assets/images/img4.jpg"
 import image6 from "assets/images/img5.jpg"
-import image7 from "assets/images/img7.jpg"
+import image7 from "assets/images/avatar-1.jpg"
+import image8 from "assets/images/avatar-6.jpg"
+
 
 const ListOfUsers = () => {
 
@@ -50,13 +52,13 @@ const ListOfUsers = () => {
                         className={s.usersInMessages}
                         onClick={() => dispatch(changeStateOfMessage({
                             id: e.id,
-                            img: e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image5,
+                            img: e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image8,
                             name: e.name
                         }))}
                         key={e.id}>
                         <img alt={""}
                              key={e.id}
-                             src={e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image5}
+                             src={e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image8}
                         />
                         <div className={s.bounceGreen}>
                             <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
@@ -119,13 +121,13 @@ const ListOfUsers = () => {
                         className={s.usersInMessages}
                         onClick={() => dispatch(changeStateOfMessage({
                             id: e.id,
-                            img: e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image5,
+                            img: e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image8 : image5,
                             name: e.name
                         }))}
                         key={e.id}>
                         <img alt={""}
                              key={e.id}
-                             src={e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image5}
+                             src={e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image8 : image5}
                         />
                         <div className={s.wrapperInfoAboutLastSeen} key={e.id + Math.random()}>
                             <div className={s.infoAboutLastSeen}>

@@ -13,6 +13,7 @@ const UserInfo = () => {
     const userData = useSelector(getUserData)
     const dispatch=useTypeDispatch()
     const userDataForSidebar = useSelector(getUserDataForSidebar)
+    console.log(userDataForSidebar)
 
     useEffect(()=>{
         if (userData?.id && (userDataForSidebar?.fullName==="")){
@@ -24,17 +25,18 @@ const UserInfo = () => {
 
 
     return (
-        !userData ? <div>SERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</div> :
+        !userDataForSidebar ? <div>SERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</div> :
         <>
             <div className={s.photoWrapper}>
                 {
                     (userDataForSidebar?.fullName === "") ?
                         <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img3.jpg"
                              alt="userPhoto"/> :
-                        userDataForSidebar?.photos.small ?
-                            <img src={userDataForSidebar?.photos.small}
-                                 alt="avatar"/> :
-                            <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 100, 100, 2.5)} />
+                        (userDataForSidebar.photos.small === undefined) ?
+
+                            <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 100, 100, 2.5)}/> :
+                            <img src={userDataForSidebar?.photos.small as string | undefined}
+                                 alt="avatar"/>
                 }
             </div>
             <div className={s.name}>

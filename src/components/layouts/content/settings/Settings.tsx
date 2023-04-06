@@ -6,13 +6,10 @@ import SocialInfoAboutUser from "../../../shared/additionalComponents/SocialInfo
 import TabsSettings from "./TabsSettings";
 export default function Settings() {
     return (
-        // <div className={s.settingsWrapper}>
-        //    {/*<div className={s.userInfoWrapper}>*/}
-        //    {/*    <UserInfo/>*/}
-        //    {/*</div>*/}
-        //    {/* <CropperModal/>*/}
-        //    {/* <SocialInfoAboutUser/>*/}
-        // </div>
-    <TabsSettings/>
+    <div className={s.settingsWrapper}>
+        <div className={s.headerSettings}>Account Settings</div>
+        <TabsSettings/>
+    </div>
+
     );
 }

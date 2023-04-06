@@ -50,9 +50,10 @@ const SocialInfoAboutUser = () => {
                                         <div className={s.inputPosition}>
                                             <Input
                                                 sx={{
-                                                    minWidth: 250,
+                                                    minWidth: "60%",
+
                                                 }}
-                                                placeholder={"Insert Your Name or Nickname"}
+                                                // placeholder={"Insert Your Name or Nickname"}
                                                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                                                     changeInputValue(event.currentTarget.value)
                                                 }
@@ -92,9 +93,9 @@ const SocialInfoAboutUser = () => {
                                         <div className={s.inputPosition}>
                                             <Input
                                                 sx={{
-                                                    minWidth: 250,
+                                                    minWidth: "60%",
                                                 }}
-                                                placeholder={"Insert your Website link"}
+                                                // placeholder={"Insert your Website link"}
                                                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                                                     changeInputValue(event.currentTarget.value)
                                                 }
@@ -134,9 +135,9 @@ const SocialInfoAboutUser = () => {
                                         <div className={s.inputPosition}>
                                             <Input
                                                 sx={{
-                                                    minWidth: 250,
+                                                    minWidth: "60%",
                                                 }}
-                                                placeholder={"Insert GitHub link"}
+                                                // placeholder={"Insert GitHub link"}
                                                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                                                     changeInputValue(event.currentTarget.value)
                                                 }
@@ -180,9 +181,9 @@ const SocialInfoAboutUser = () => {
                                         <div className={s.inputPosition}>
                                             <Input
                                                 sx={{
-                                                    minWidth: 250,
+                                                    minWidth: "60%",
                                                 }}
-                                                placeholder={"Insert your Instagramm link"}
+                                                // placeholder={"Insert your Instagramm link"}
                                                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                                                     changeInputValue(event.currentTarget.value)
                                                 }

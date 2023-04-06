@@ -10,15 +10,15 @@ import {Autoplay, Navigation, Pagination} from "swiper";
 const MainCarousel = () => {
     return (
         <div className={s.mainWrapper}>
-            <div className={s.headerWithLinks}>
-                <div className={s.linksBlock}>
-                    <div className={s.link}>All goods</div>
-                    <div className={s.link}>Bookmarks</div>
-                    <div className={s.link}>Orders</div>
-                    <div className={s.link}>My adverts</div>
-                </div>
-                <div>Shopping bag</div>
-            </div>
+            {/*<div className={s.headerWithLinks}>*/}
+            {/*    <div className={s.linksBlock}>*/}
+            {/*        <div className={s.link}>All goods</div>*/}
+            {/*        <div className={s.link}>Bookmarks</div>*/}
+            {/*        <div className={s.link}>Orders</div>*/}
+            {/*        <div className={s.link}>My adverts</div>*/}
+            {/*    </div>*/}
+            {/*    <div>Shopping bag</div>*/}
+            {/*</div>*/}
             <div className={s.carousel}>
                 <Swiper
                     cssMode={true}

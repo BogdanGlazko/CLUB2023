@@ -1,8 +1,12 @@
 .commonInfoWrapper
-  margin-top: 90px
   display: flex
   flex-direction: column
   align-items: center
+  padding: 3%
+  box-shadow: 0px 0px 3px 1px rgb(255, 255, 255)
+  background-color: white
+  margin-left: 32px
+  width: 100%
 
 .commonInfo
   display: flex
@@ -22,7 +26,6 @@
   justify-content: space-between
   align-items: baseline
   width: 100%
-  margin-bottom: 15px
 
 .inputWrapper
   margin-left: 25px
@@ -52,13 +55,19 @@
   display: flex
   flex-direction: row
   align-items: baseline
-
-
+  font-family: "Inter",sans-serif
+  font-size: 15px
+  font-weight: 500
+  line-height: 23px
+  letter-spacing: 0em
+  text-align: left
+  color: rgb(102, 102, 102)
+  margin: 10.5px 0 12px 0
 
 .contentAndLinks
   color: #6b6a6a
+  font-size: 14px
   margin: 0 10px 0 20px
-  font-weight: bold
   word-wrap: break-word
   text-align: left
 
@@ -66,12 +75,29 @@
  width: 100px
  text-align: left
 
+
+@media only screen and (max-width: 1120px)
+  .commonInfoWrapper
+    margin-left: 0
+
+
 @media only screen and (max-width: 640px)
  .contentAndLinks
-   margin-left: -20px
+   font-size: 12px
+   margin: 0
  .commonInfoWrapper
    align-items: flex-start
+   margin-left: 10px
  .stringWrapper
    flex-direction: column
    margin-left: 10px
+ .nameOfResource
+  font-size: 14px
  .mainInputWrapper
+    flex-direction: column
+ .stringWrapper
+    border-bottom: 1px solid grey
+ .inputWrapper, .inputPosition
+   margin: 0
+
+

@@ -8,6 +8,35 @@
   .infoProduct
     padding-left: 30px
 
+.marketplaceWrapper
+  width: 85%
+  margin: 2% 0% 2% 7%
+  .commonCarouselWrapper
+    margin: 25px 0 50px 0
+
+.categoryHeader
+  font-family: "Inter",sans-serif
+  font-size: 24px
+  font-weight: 800
+  line-height: 32px
+  letter-spacing: -0.6000000238418579px
+  text-align: left
+  color: rgba(17, 24, 39, 1)
+
+.categoryButtonsWrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  margin: 10px 0 16px 0
+  button
+    width: fit-content
+  .categoryButtons
+   display: flex
+   flex-direction: row
+   flex-wrap: wrap
+   button
+    color: #9b9b9b
+
 
 @media only screen and (max-width: 475px)
   .aboutProductWrapper
@@ -17,3 +46,8 @@
      margin-bottom: 20px
     .infoProduct
      padding-left: 0
+
+@media only screen and (max-width: 1150px)
+  .categoryButtonsWrapper
+    button
+      margin-top: 10px

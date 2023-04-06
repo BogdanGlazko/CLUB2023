@@ -9,19 +9,33 @@
 .settingsWrapper
   display: flex
   flex-direction: column
-  overflow: scroll
-  overflow-x: hidden
-  margin: 10px 3% 1% 3%
+  align-items: flex-start
+  margin: 35px 3% 1% 3%
   min-width: 600px
   height: 100vh
   border-radius: 5px
-  background-color: white
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+.changePhotoWrapper
+  display: flex
+  flex-direction: row
+  align-items: center
+
+.headerSettings
+  font-family: "Inter",sans-serif
+  font-size: 24px
+  font-weight: 400
+  line-height: 24px
+  letter-spacing: -0.6000000238418579px
+  text-align: left
+  color: black
+  margin-bottom: 24px
+
 
 .userInfoWrapper
   display: flex
   flex-direction: column
   align-items: center
+  margin-right: 50px
+
 
 .loaderWrap
  display: flex
@@ -58,9 +72,133 @@
 /*------------------*/
 
 
+
+//general page
+
+.settingsGeneralWrapper
+  display: flex
+  flex-direction: row
+  margin-bottom: 32px
+
+
+
+.headersGeneral, .formsGeneral
+  display: flex
+  flex-direction: column
+  text-align: left
+
+.headersGeneral
+  flex-basis: 40%
+
+.formsGeneral
+  padding: 3%
+  box-shadow: 0px 0px 3px 1px rgb(255, 255, 255)
+  background-color: white
+  margin-left: 32px
+  width: 100%
+
+
+
+.headersGeneral :nth-child(1)
+  margin-bottom: 14px
+  font-family: Inter
+  font-size: 20px
+  font-weight: 400
+  line-height: 28px
+  letter-spacing: 0em
+  text-align: left
+  color: black
+
+.headersGeneral :nth-child(2)
+  font-family: Inter
+  font-size: 15px
+  font-weight: 400
+  line-height: 27px
+  letter-spacing: 0em
+  text-align: left
+
+
+.formAboutUserInfo
+  .name, .aboutWork
+   display: flex
+   flex-direction: row
+  .inputMargin
+   margin-right: 15px
+   width: 100%
+  input
+    margin: 0
+    height: 48px
+  .headerNameOfElement
+    font-family: Inter
+    font-size: 15px
+    font-weight: 500
+    line-height: 23px
+    letter-spacing: 0em
+    text-align: left
+    color: rgba(102, 102, 102, 1)
+    margin: 10.5px 0 12px 0
+  .aboutMeInput
+    height: 160px
+  .buttonsWrapper
+   display: flex
+   flex-direction: row
+   justify-content: flex-end
+   margin-top: 24px
+
+.checkBoxSection>div
+  display: flex
+  flex-direction: row
+.wrapperCheckBoxSection
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  border-top: 1px solid rgba(201, 201, 201, 0.34)
+
+.wrapperCheckBoxSection>div :nth-child(1)
+  font-family: Inter
+  font-size: 15px
+  font-weight: 400
+  line-height: 23px
+  letter-spacing: 0em
+  text-align: left
+
+.headerOfElementPrivacy
+  color: black
+
+.formAboutUserInfo div
+ width: 100%
+ display: flex
+ align-items: flex-start
+ flex-direction: column
+
+
+@media only screen and (max-width: 1120px)
+  .changePhotoWrapper
+    flex-direction: column
+  .userInfoWrapper
+    margin: 0 0 25px 0
+  .commonInfoWrapper
+    margin-left: 0
+    width: 50%
+
+
 @media only screen and (max-width: 640px)
   .stringWrapper
     min-width: 80px
     flex-direction: column
   .settingsWrapper
     min-width: 200px
+    align-items: center
+  .settingsGeneralWrapper
+    flex-direction: column
+  .formsGeneral
+    margin-left: -15px
+  .headersGeneral
+    margin: 0 0 20px -10px
+
+@media only screen and (max-width: 550px)
+  .changePhotoWrapper
+    margin-left: -40px
+
+
+
