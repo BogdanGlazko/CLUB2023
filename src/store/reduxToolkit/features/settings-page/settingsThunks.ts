@@ -2,7 +2,7 @@ import {AppDispatch} from "../../../reduxToolkit";
 import {dataURLtoFile} from "util/Base64ToFile";
 import {UsersRequestAxios} from "dataAccessLayer/usersRequestAxios";
 import {ResultCode} from "enum/AppEnums";
-import {setUserDataSidebarPhotos} from "../sidebar-page/sidebarSlice";
+import {setUserDataSidebarPhotosAfterChange} from "../sidebar-page/sidebarSlice";
 import {changeErrorStatus, changeStateOfModalWindow, uploadingPhoto} from "./settingsSlice";
 import {getInfoForSidebar} from "../sidebar-page/sidebarThunks";
 import {getUserForMyProfile} from "../myProfile-page/myProfileThunks";
@@ -12,7 +12,7 @@ export const changeUserAvatar = (userAvatarBase64: any) => async (dispatch: AppD
         const response = dataURLtoFile(userAvatarBase64)
         const requestToServer = await UsersRequestAxios.setNewAvatar(response)
         if (requestToServer.resultCode === ResultCode.success) {
-            dispatch(setUserDataSidebarPhotos(requestToServer.data.photos))
+            dispatch(setUserDataSidebarPhotosAfterChange(requestToServer.data.photos))
             dispatch(changeStateOfModalWindow(false))
             dispatch(uploadingPhoto(false))
         }

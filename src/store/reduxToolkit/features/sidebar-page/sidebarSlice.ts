@@ -25,7 +25,9 @@ export const sidebarSlice = createSlice({
     initialState,
     reducers: {
         setUserDataSidebarPhotos: (state: ISidebarState, action:PayloadAction<any>) => {
-            console.log(action.payload)
+            state.userDataSidebar.photos = action.payload.photos
+        },
+        setUserDataSidebarPhotosAfterChange: (state: ISidebarState, action:PayloadAction<any>) => {
             state.userDataSidebar.photos = action.payload
         },
         setUserDataSidebarName: (state: ISidebarState, action:PayloadAction<any>) => {
@@ -37,6 +39,7 @@ export const sidebarSlice = createSlice({
 
 export const {
     setUserDataSidebarPhotos,
-    setUserDataSidebarName
+    setUserDataSidebarName,
+    setUserDataSidebarPhotosAfterChange
 } = sidebarSlice.actions
 export default sidebarSlice.reducer

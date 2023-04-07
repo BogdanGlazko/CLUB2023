@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from "./content.module.sass"
 import Messages from "./messages/Messages";
 import Friends from "./friends/Friends";

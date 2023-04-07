@@ -11,7 +11,7 @@ import {getUserForMyProfile} from "../../../store/reduxToolkit/features/myProfil
 
 const UserInfo = () => {
     const userData = useSelector(getUserData)
-    const dispatch=useTypeDispatch()
+    const dispatch = useTypeDispatch()
     const userDataForSidebar = useSelector(getUserDataForSidebar)
     console.log(userDataForSidebar)
 

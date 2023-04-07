@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import MainCarousel from "./mainCarousel/MainCarousel";
 import CommonCarousel from "./commonCarousel/CommonCarousel";
 import s from "./marketplace.module.sass"
@@ -6,6 +6,15 @@ import ButtonGrey from "../../../shared/additionalComponents/buttons/ButtonGrey"
 import ButtonCoral from "../../../shared/additionalComponents/buttons/ButtonCoral";
 
 const Marketplace = () => {
+
+    useEffect(() => {
+        const element = document.getElementById('scroll');
+        console.log(element)
+        if (element) {
+            element.scrollIntoView({ behavior:"auto" });
+        }
+    },[]);
+
     return (
         <div className={s.marketplaceWrapper}>
             <div className={s.categoryHeader}>Market</div>
