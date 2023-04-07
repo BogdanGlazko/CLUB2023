@@ -43,17 +43,17 @@ const CommonCarousel = () => {
                     modules={[FreeMode, Pagination]}
                     className="mySwiper"
                     breakpoints={{
-                        1330: {
+                        1380: {
                             slidesPerView: 5,
                             spaceBetween: -10
                         },
                         1100: {
                             slidesPerView: 4,
-                            spaceBetween: 60
-                        },
-                        400: {
-                            slidesPerView: 2,
                             spaceBetween: 30
+                        },
+                        460: {
+                            slidesPerView: 2,
+                            spaceBetween: 10
                         },
 
                     }}
