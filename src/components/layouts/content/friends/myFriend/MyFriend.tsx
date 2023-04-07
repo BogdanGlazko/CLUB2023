@@ -41,9 +41,15 @@ const MyFriend = (props: IUserModel) => {
                 <div className={s.buttonWrapper}>
                     {props.followed ?
                         <Button
+                            sx={{
+                                width:"100%"
+                            }}
                             className={s.button}
                             onClick={() => dispatch(unFollowUser(props.id))}> Unfollow </Button>
                         : <Button
+                            sx={{
+                                width:"100%"
+                            }}
                             className={s.button}
                             variant="contained"
                             onClick={() => dispatch(followUser(props.id))}>Follow</Button>}

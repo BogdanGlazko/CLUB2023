@@ -50,8 +50,7 @@ function MyProfile() {
             }
         }
     }, [state])
-
-
+    
     useEffect(() => {
         const element = document.getElementById('scroll');
         console.log(element)
