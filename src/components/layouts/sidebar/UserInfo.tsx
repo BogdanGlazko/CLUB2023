@@ -14,36 +14,35 @@ const UserInfo = () => {
     const userDataForSidebar = useSelector(getUserDataForSidebar)
     console.log(userDataForSidebar)
 
-    useEffect(()=>{
-        if (userData?.id && (userDataForSidebar?.fullName==="")){
-            if (userDataForSidebar){
+    useEffect(() => {
+        if (userData?.id && (userDataForSidebar?.fullName === "")) {
+            if (userDataForSidebar) {
                 dispatch(getInfoForSidebar(userData!.id))
             }
         }
-    },[userData])
+    }, [userData])
 
 
     return (
-        !userDataForSidebar ? <div>SERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</div> :
-        <>
-            <div className={s.photoWrapper}>
-                {
-                    (userDataForSidebar?.fullName === "") ?
-                        <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img3.jpg"
-                             alt="userPhoto"/> :
-                        (userDataForSidebar.photos.small === undefined) ?
+        !userDataForSidebar ? <div> </div> :
+            <>
+                <div className={s.photoWrapper}>
+                    {
+                        (userDataForSidebar?.fullName === "") ?
+                            <img src="http://demo.foxthemes.net/instellohtml/assets/images/post/img3.jpg"
+                                 alt="userPhoto"/> :
+                            (userDataForSidebar.photos.small === null) ?
+                                    <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 100, 100, 2.5)}/> :
 
-                            <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 100, 100, 2.5)}/> :
-
-                            <img src={userDataForSidebar?.photos.small as string | undefined}
-                                 alt="avatar"/>
-                }
-            </div>
-            <div className={s.name}>
-                {userDataForSidebar ? userDataForSidebar!.fullName : "null"}
-            </div>
-            <br/>
-        </>
+                                <img src={userDataForSidebar?.photos.small as string | undefined}
+                                     alt="avatar"/>
+                    }
+                </div>
+                <div className={s.name}>
+                    {userDataForSidebar ? userDataForSidebar!.fullName : "null"}
+                </div>
+                <br/>
+            </>
 
     );
 }
