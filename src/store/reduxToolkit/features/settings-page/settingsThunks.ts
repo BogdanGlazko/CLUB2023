@@ -37,7 +37,7 @@ export const setInputValueThunk=(arg:string,value:string,userData:any)=>async (d
                     lookingForAJob: userData.lookingForAJob,
                     lookingForAJobDescription: userData.lookingForAJobDescription,
                     fullName:userData.fullName,
-                    aboutMe:userData.aboutMe,
+                    aboutMe:userData.aboutMe===null?"":userData.aboutMe,
                     contacts: {website:value,instagram:userData.contacts.instagram,github:userData.contacts.github}}
                 const response = await UsersRequestAxios.setSocialDataInProfile(setDataInObject)
                 console.log(response)
@@ -51,7 +51,7 @@ export const setInputValueThunk=(arg:string,value:string,userData:any)=>async (d
                     lookingForAJob: userData.lookingForAJob,
                     lookingForAJobDescription: userData.lookingForAJobDescription,
                     fullName:userData.fullName,
-                    aboutMe:userData.aboutMe,
+                    aboutMe:userData.aboutMe===null?"":userData.aboutMe,
                     contacts: {website:userData.contacts.website,instagram:value,github:userData.contacts.github}}
                 const response = await UsersRequestAxios.setSocialDataInProfile(setDataInObject)
                 console.log(response)
@@ -65,7 +65,7 @@ export const setInputValueThunk=(arg:string,value:string,userData:any)=>async (d
                     lookingForAJob: userData.lookingForAJob,
                     lookingForAJobDescription: userData.lookingForAJobDescription,
                     fullName:value,
-                    aboutMe:userData.aboutMe,
+                    aboutMe:userData.aboutMe===null?"":userData.aboutMe,
                     contacts: {website:userData.contacts.website,instagram:userData.contacts.instagram,github:userData.contacts.github}}
                 const response = await UsersRequestAxios.setSocialDataInProfile(setDataInObject)
                 console.log(response)
@@ -79,7 +79,7 @@ export const setInputValueThunk=(arg:string,value:string,userData:any)=>async (d
                     lookingForAJob: userData.lookingForAJob,
                     lookingForAJobDescription: userData.lookingForAJobDescription,
                     fullName:userData.fullName,
-                    aboutMe:userData.aboutMe,
+                    aboutMe:userData.aboutMe===null?"":userData.aboutMe,
                     contacts: {website:userData.contacts.website,instagram:userData.contacts.instagram, github:value}}
                 const response = await UsersRequestAxios.setSocialDataInProfile(setDataInObject)
                 console.log(response)

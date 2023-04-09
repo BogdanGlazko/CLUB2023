@@ -7,7 +7,6 @@ import {getDefaultAvatar} from "util/stringAvatar";
 import {useTypeDispatch} from "hooks/useTypeDispatch";
 import {getInfoForSidebar} from "store/reduxToolkit/features/sidebar-page/sidebarThunks";
 import {getUserData} from "store/reduxToolkit/features/app/appSelectors";
-import {getUserForMyProfile} from "../../../store/reduxToolkit/features/myProfile-page/myProfileThunks";
 
 const UserInfo = () => {
     const userData = useSelector(getUserData)
@@ -35,6 +34,7 @@ const UserInfo = () => {
                         (userDataForSidebar.photos.small === undefined) ?
 
                             <Avatar {...getDefaultAvatar(userDataForSidebar!.fullName, 100, 100, 2.5)}/> :
+
                             <img src={userDataForSidebar?.photos.small as string | undefined}
                                  alt="avatar"/>
                 }
