@@ -26,13 +26,13 @@ function Content() {
                     <ScrollButton/>
                     <Routes location={location}>
                         <Route path="profile" element={<MyProfile/>}/>
-                        <Route path="login" element={<Navigate to="/profile"/>}/>
                         <Route path="messages" element={<Messages/>}/>
                         <Route path="feed" element={<Feed/>}/>
                         <Route path="friends" element={<Friends/>}/>
                         <Route path="chat" element={<Chat/>}/>
                         <Route path="marketplace" element={<Marketplace/>}/>
                         <Route path="settings" element={<Settings/>}/>
+                        <Route path="login" element={ <Navigate replace to="/profile"/>}/>
                     </Routes>
                 </div>
             </div>

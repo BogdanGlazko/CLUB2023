@@ -31,7 +31,6 @@ const App: React.FC = () => {
             <>
                 {isUserLogged === false ? (
                     <div className={s.appWrapper}>
-                        <Navigate replace to="/login" />
                         <Routes>
                             <Route path="/login" element={<Login />} />
                             <Route path="*" element={<Navigate to="/login"/>}/>
