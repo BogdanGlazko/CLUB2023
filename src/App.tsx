@@ -19,12 +19,6 @@ const App: React.FC = () => {
     const isUserLogged = useSelector(getStateOfLogin)
 
     useEffect(() => {
-        // // renavigate to page where user has been before
-        // navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'));
-        // window.onbeforeunload = () => {
-        //     window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname));
-        // };
-
         dispatch(isLoggedUser());
     }, []);
 
@@ -37,9 +31,10 @@ const App: React.FC = () => {
             <>
                 {isUserLogged === false ? (
                     <div className={s.appWrapper}>
+                        <Navigate replace to="/login" />
                         <Routes>
                             <Route path="/login" element={<Login />} />
-                            <Route path="*" element={<Navigate to="/login" />} />
+                            <Route path="*" element={<Navigate to="/login"/>}/>
                         </Routes>
                     </div>
                 ) : (

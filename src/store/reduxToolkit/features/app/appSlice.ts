@@ -4,7 +4,7 @@ import {IAppInitialState} from "interfaces/appInterfaces/appInterfaces";
 
 const initialState: IAppInitialState = {
     isLogginedUser: false,
-    loading: false,
+    loading: true,
     errorDiv: false,
     userData: null,
     captchaStatus: false,
