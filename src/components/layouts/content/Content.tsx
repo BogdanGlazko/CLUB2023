@@ -12,11 +12,14 @@ import {IAppInitialState} from "interfaces/appInterfaces/appInterfaces";
 import Settings from "./settings/Settings";
 import ScrollButton from "../../shared/additionalComponents/ScrollUp";
 import Marketplace from "./marketplace/Marketplace";
+import {routerConfigContent} from "../../routes/RoutesContent";
+import {useRouteFilter} from "../../../hooks/useRouteFilter";
 
 
 function Content() {
     const isLoading = useSelector((state: IAppInitialState) => state.loading)
     const location = useLocation();
+    const route: typeof routerConfigContent = useRouteFilter(routerConfigContent)
     return (
         isLoading ?
             <div className={s.loader}><Loader/></div> :
@@ -25,14 +28,17 @@ function Content() {
                     <div id="scroll"></div>
                     <ScrollButton/>
                     <Routes location={location}>
-                        <Route path="profile" element={<MyProfile/>}/>
-                        <Route path="messages" element={<Messages/>}/>
-                        <Route path="feed" element={<Feed/>}/>
-                        <Route path="friends" element={<Friends/>}/>
-                        <Route path="chat" element={<Chat/>}/>
-                        <Route path="marketplace" element={<Marketplace/>}/>
-                        <Route path="settings" element={<Settings/>}/>
-                        <Route path="login" element={ <Navigate replace to="/profile"/>}/>
+                        <Route
+                            path="login"
+                            element={ <Navigate replace to="/profile"/> }/>
+                        {route.map((routeState:any) => (
+                                <Route
+                                    key={routeState.path}
+                                    path={routeState.path}
+                                    element={routeState.element}
+                                />
+                            )
+                        )}
                     </Routes>
                 </div>
             </div>

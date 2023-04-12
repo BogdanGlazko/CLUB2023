@@ -3,7 +3,7 @@ import {IAppInitialState} from "interfaces/appInterfaces/appInterfaces";
 
 
 const initialState: IAppInitialState = {
-    isLogginedUser: false,
+    isLoggedUser: false,
     loading: true,
     errorDiv: false,
     userData: null,
@@ -17,7 +17,7 @@ export const appSlice = createSlice({
     initialState,
     reducers: {
         changeIsLoginUser: (state: IAppInitialState, action: PayloadAction<boolean>): void => {
-            state.isLogginedUser = action.payload;
+            state.isLoggedUser = action.payload;
         },
         loading: (state, action: PayloadAction<boolean>): void => {
             state.loading = action.payload;

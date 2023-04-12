@@ -3,7 +3,7 @@ import {IAppInitialState} from "../interfaces/appInterfaces/appInterfaces";
 
 test( "appSliceTest" , ()=>{
 const state:IAppInitialState = {
-    isLogginedUser: false,
+    isLoggedUser: false,
     loading: false,
     errorDiv: false,
     userData:null,
@@ -17,6 +17,6 @@ const state:IAppInitialState = {
     const errorFromServerData = AppSlice(state, errorFromServer("Incorrect Email or Password"))
     console.log(errorFromServerData)
     expect(loadingData.loading).toBeTruthy()
-    expect(chngIsLoginUserData.isLogginedUser).toBeTruthy()
+    expect(chngIsLoginUserData.isLoggedUser).toBeTruthy()
     expect(errorFromServerData.errorDiv).toBe("Incorrect Email or Password")
 })
