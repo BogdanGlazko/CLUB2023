@@ -17,7 +17,9 @@ export const startListeningNewMessages = () => async (dispatch: AppDispatch) => 
     }
 }
 export const sendMessageToServer = (message: string) => async (dispatch: AppDispatch) => {
-   await chatApi.sendMessage(message)
+    if (message.trim()!==""){
+        await chatApi.sendMessage(message)
+    }
     dispatch(sendMessage(""))
 }
 

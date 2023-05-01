@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import s from "./messages.module.sass"
 import {useDispatch, useSelector} from 'react-redux'
 import {addMessage, changeArea, changeStateOfMessage} from "store/reduxToolkit/features/messages-page/messagesSlice"
@@ -7,7 +7,7 @@ import {
     currentMessage,
     currentUser,
     messagesPage,
-    messageTextArea
+    messageTextArea, scrollStatus
 } from "store/reduxToolkit/features/messages-page/messagesSelectors";
 
 import image4 from "assets/images/img2.jpg"
@@ -21,7 +21,29 @@ const ListOfChats = () => {
     const getMessagesPage = useSelector(messagesPage)
     const getCurrentMessage = useSelector(currentMessage)
     const getMessageTextArea = useSelector(messageTextArea)
+    const scrollDown = useSelector(scrollStatus)
+    console.log(scrollDown)
     const dispatch = useDispatch<AppDispatch>()
+
+    //autoscroll code
+    const messagesEndRef: any = useRef(null)
+    const scrollToBottom = () => {
+        messagesEndRef.current.scrollIntoView({behavior: "smooth"});
+    };
+    //end of autoscroll code
+
+    useEffect(() => {
+        if (messagesEndRef.current!==null) {
+            scrollToBottom()
+        }
+    }, [getMessagesPage,messagesEndRef])
+
+    useEffect(() => {
+        if (scrollDown !== "") {
+            scrollToBottom()
+        }
+    }, [scrollDown])
+
 
     return (
         <>
@@ -29,13 +51,13 @@ const ListOfChats = () => {
                 <div className={s.wrapper}>
                     <div className={s.currentUserMessages}>
                         <div className={s.currentUserWrapper}>
-                            {!getCurrentUser ? "" : <> <img alt={"UserCurrent"} src={getCurrentUser["img"]}/>
+                            {!getCurrentUser ? "" : <>
+                                <img alt={"UserCurrent"} src={getCurrentUser["img"]}/>
                                 <div className={s.userStatusWrapper}>
                                     <div>{getCurrentUser["name"]}</div>
                                     <div className={s.isOnlineUser}> is online</div>
                                 </div>
                             </>}
-
                         </div>
                         <div className={s.currentUserWrapperDeleteMessage}>
                             <div className={s.svgDeleteMediaSmall}>
@@ -73,14 +95,14 @@ const ListOfChats = () => {
                                     <div
                                     className={e.id === 1 ? s.one : e.id === 2 ? s.two : e.id === 3 ? s.three : undefined}
                                     key={e.id}>
-                                        {/*{e.img}*/}
-                                        {/*<img src={e.id===1?image4:e.id===2?image6:e.id===3?image7:image5} alt="user"/>*/}
                                     {e.message}
                                     {e.date}
                                 </div>
                                 </>
                             )}
+
                         </div>
+                        <span ref={messagesEndRef}></span>
                     </div>
                     <div className={s.inputMessages}>
                         <textarea

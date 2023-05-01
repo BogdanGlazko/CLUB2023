@@ -15,7 +15,8 @@ export interface User {
 export interface IUserData {
     users: User;
     loading: boolean;
-    userID:number|null
+    userID:number|null;
+    modalState: { img:string, isOpened: boolean }
 }
 export const initialState: IUserData = {
     users:{
@@ -30,7 +31,8 @@ export const initialState: IUserData = {
         status:null
     },
     loading:false,
-    userID:null
+    userID:null,
+    modalState: { img:"", isOpened: true }
 }
 
 
@@ -38,9 +40,11 @@ export const friendsSlice = createSlice({
     name: "usersReducer",
     initialState,
     reducers: {
+
         setUserOnProfilePage: (state = initialState, action:  PayloadAction<any>) => {
             state.users = action.payload
         },
+
         setStatusOfFollowing: (state = initialState, action:  PayloadAction<boolean>) => {
             state.users!.isFollower = action.payload
         },
@@ -53,6 +57,10 @@ export const friendsSlice = createSlice({
         setId:(state:IUserData,action:PayloadAction<number>) =>{
             state.userID = action.payload
         },
+        changeStateOfModalWindow:(state,action:PayloadAction<any>):void=>{
+            console.log(action.payload)
+            state.modalState = action.payload
+        },
 
     }
 });
@@ -63,7 +71,8 @@ export const {
     setStatusOfFollowing,
     setUserStatus,
     loadingUser,
-    setId
+    setId,
+    changeStateOfModalWindow
 } = friendsSlice.actions;
 export default friendsSlice.reducer;
 

@@ -6,7 +6,6 @@
   background-color: white
   object-fit: cover
 
-
 .circleAvatar
   border-radius: 50%
   border: solid 6px
@@ -14,9 +13,82 @@
   width: 224px
   height: 224px
 
-
+.heightWrapper
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 90vh
 .imagesWrapper
   width: 95%
+.nameAndImageBlock
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin-top: 15px
+  img
+    margin-left: 20px
+    width: 50px
+    height: 50px
+    border-radius: 50px
+    object-fit: cover
+    margin-right: 15px
+.commentInput
+  width: 90%
+.imageModal
+  max-width: 650px
+  height: 100%
+  overflow: hidden
+.imageModal img
+  width: 100%
+  height: 650px
+  object-fit: cover
+//.neHidden
+//  overflow: scroll
+.wrapperModalGeneral
+  display: flex
+  flex-direction: row
+.modalContentWrapper
+  display: flex
+  flex-direction: row
+  .contentModal
+    overflow-y: scroll
+    height: 58vh
+    margin: 15px 0 0 10px
+    display: flex
+    flex-direction: column
+    width: 100%
+  .likeAndCommentBlock
+    display: flex
+    flex-direction: column
+    border-top: 1px solid rgba(80, 80, 80, 0.1)
+    border-bottom: 1px solid rgba(80, 80, 80, 0.1)
+    padding: 10px 0 10px 0
+    margin: 0 0 15px 15px
+  .likeAndCommentBlock :nth-child(2),.flexBlock
+    display: flex
+    flex-direction: row
+    align-items: center
+  .imgContentModal
+    width: 50px
+    height: 50px
+    border-radius: 50px
+    object-fit: cover
+  .commentsBlock img
+    width: 30px
+    height: 30px
+    border-radius: 50px
+    object-fit: cover
+.commentsBlock
+  height: 50vh
+  .imagesCommentsWrapper img
+    margin-left: -15px
+    border: white solid 3px
+  .imagesCommentsWrapper
+    margin-left: 25px
+
+.imgComment
+  margin-right: 10px
+  margin-left: 10px
 
 
 .userMainInfo
@@ -31,11 +103,10 @@
 .aboutUser
   margin-bottom: 25px
   width: 65%
-  text-align: justify
   font-size: 15px
   font-weight: 400
   line-height: 27px
-  letter-spacing: 0em
+  letter-spacing: 0
   text-align: left
 
 
@@ -55,6 +126,11 @@
   height: 16rem
   width: 11.5rem
   object-fit: cover
+  cursor: pointer
+
+.imagesRecent img:hover
+  transition: .3s
+  transform: scale(1.06)
 
 
 .imagesRecent
@@ -197,7 +273,6 @@
   color: rgba(128, 128, 128, 0.75)
   margin-bottom: 15px
 
-
 .addPhotoBlock div:hover
   cursor: pointer
   color: #1d6daf
@@ -228,7 +303,6 @@
   padding-right: 20px
 
 
-
 .loadMoreButton
   font-family: 'Inter', sans-serif
   font-weight: 600
@@ -240,7 +314,6 @@
   border-radius: 45px
   background-color: #ffffff
   margin-bottom: 90px
-
 
 .loadMoreButton:hover
   background-color: rgba(166, 165, 165, 0.53)
@@ -317,6 +390,32 @@
   top: 90%
   position: fixed
   right: 90px
+
+
+
+/*SCROLL*/
+.contentModal::-webkit-scrollbar-track
+  border-radius: 10px
+  background: rgba(0, 0, 0, 0.1)
+
+
+.contentModal::-webkit-scrollbar-thumb
+  border-radius: 10px
+  background: rgba(0, 0, 0, 0.2)
+
+
+.contentModal::-webkit-scrollbar
+  width: 6px
+  height: 6px
+
+
+.contentModal::-webkit-scrollbar-thumb:hover
+  background: rgba(0, 0, 0, 0.4)
+
+
+.contentModal::-webkit-scrollbar-thumb:active
+  background: rgba(0, 0, 0, .9)
+/*------------------*/
 
 @media only screen and (max-width: 1160px)
     .userMainInfoContainer

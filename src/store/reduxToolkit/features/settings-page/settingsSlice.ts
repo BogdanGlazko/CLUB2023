@@ -10,7 +10,7 @@ export const settingsSlice=createSlice({
     name:"settingsReducer",
     initialState,
     reducers:{
-        changeStateOfModalWindow:(state,action:PayloadAction<boolean>):void=>{
+        changeStateOfModalWindow:(state,action:PayloadAction<any>):void=>{
            state.modalWindowState=action.payload
         },
         uploadingPhoto:(state,action:PayloadAction<boolean>):void=>{

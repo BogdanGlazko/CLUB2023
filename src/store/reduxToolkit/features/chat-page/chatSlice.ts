@@ -3,7 +3,6 @@ import {AppDispatch} from "store/reduxToolkit";
 import {chatApi} from "api/webSocketChatAPI";
 import {IChatState, IUSerMessageData} from "interfaces/chatInterfaces/chatInterfaces";
 import {statusType} from "interfaces/webSocketChatInterfaces/webSocketChatInterfaces";
-import {ChangeEvent} from "react";
 
 const initialState: IChatState = {
     userMessageData: [],

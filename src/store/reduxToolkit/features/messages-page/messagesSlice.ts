@@ -93,6 +93,7 @@ const initialState={
     },
     currentMessage:0,
     currentUser:null,
+    scrollDown: ""
 }
 export type currentUserType ={
     currentUser:{img:string,name:string}|null,
@@ -109,13 +110,15 @@ export const messagesSlice=createSlice({
             state.messageTextarea = action.payload;
         },
         changeStateOfMessage:(state:InitialStateType,action:PayloadAction<any>):void=>{
-            console.log(action.payload)
+            state.scrollDown = action.payload.scroll
             state.currentMessage= action.payload.id
             state.currentUser= action.payload
         },
         addMessage:(state:InitialStateType,action:PayloadAction<any>):void=>{
-            Object.values(state.messagesPageUser100.users[state.currentMessage])[0].push({message:state.messageTextarea, id:action.payload.id});
-            state.messageTextarea=action.payload.string;
+            state.messageTextarea.trim() == "" ? console.log("hi peep") :
+            Object.values(state.messagesPageUser100.users[state.currentMessage])[0].
+            push({message:state.messageTextarea, id:action.payload.id});
+            state.messageTextarea = action.payload.string;
         },
     }
 });

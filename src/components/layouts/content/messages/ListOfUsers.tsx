@@ -53,7 +53,8 @@ const ListOfUsers = () => {
                         onClick={() => dispatch(changeStateOfMessage({
                             id: e.id,
                             img: e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image7 : image8,
-                            name: e.name
+                            name: e.name,
+                            scrollDown: Math.floor(Math.random() * (e.id+2))
                         }))}
                         key={e.id}>
                         <img alt={""}
@@ -122,7 +123,8 @@ const ListOfUsers = () => {
                         onClick={() => dispatch(changeStateOfMessage({
                             id: e.id,
                             img: e.id === 1 ? image4 : e.id === 2 ? image6 : e.id === 3 ? image8 : image5,
-                            name: e.name
+                            name: e.name,
+                            scrollDown: Math.floor(Math.random() * (e.id+2))
                         }))}
                         key={e.id}>
                         <img alt={""}

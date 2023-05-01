@@ -28,6 +28,7 @@ function Content() {
                     <div id="scroll"></div>
                     <ScrollButton/>
                     <Routes location={location}>
+                        <Route path="*" element={<Navigate to="/profile"/>}/>
                         <Route
                             path="login"
                             element={ <Navigate replace to="/profile"/> }/>

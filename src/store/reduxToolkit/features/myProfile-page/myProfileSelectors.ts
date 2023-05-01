@@ -6,3 +6,5 @@ export const getIsFollower = (state:RootState) => state.myProfilePage.users?.isF
 export const isLoadingUser = (state:RootState)=> state.myProfilePage.loading
 export const userID = (state:RootState)=> state.myProfilePage.userID
 
+export const modalData = (state:RootState)=> state.myProfilePage.modalState
+

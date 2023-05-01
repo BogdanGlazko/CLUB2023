@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import s from "./scrollUpButton.module.sass";
-import MouseOverPopover from "./MouseOverPopover";
 
 const ScrollButton = () => {
     const [scrollUpButton, setScrollUpButton] = useState(false)
